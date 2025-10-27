@@ -15,17 +15,17 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">홈</a></li>
-                    <li><a href="about.html">회사소개</a></li>
-                    <li><a href="services.html" class="active">서비스</a></li>
-                    <li><a href="contact.html">문의하기</a></li>
+                    <li><a href="index.html" data-translate-key="menu_home">홈</a></li>
+                    <li><a href="about.html" data-translate-key="menu_about">회사소개</a></li>
+                    <li><a href="services.html" class="active" data-translate-key="menu_services">서비스</a></li>
+                    <li><a href="contact.html" data-translate-key="menu_contact">문의하기</a></li>
                 </ul>
             </nav>
             <div class="language-selector">
-                <button>KR 한국어</button>
-                <button>EN ENGLISH</button>
-                <button>ES ESPANOL</button>
-                <button>ZH 中文</button>
+                <button onclick="setLanguage('ko')">KR 한국어</button>
+                <button onclick="setLanguage('en')">EN ENGLISH</button>
+                <button onclick="setLanguage('es')">ES ESPANOL</button>
+                <button onclick="setLanguage('zh')">ZH 中文</button>
             </div>
         </div>
     </header>
@@ -33,73 +33,41 @@
     <main>
         <section class="hero-section services-hero" id="services-hero">
             <div class="hero-content">
-                <h1>서비스 안내</h1>
-                <p>한국과 파나마를 잇는 빠르고 정확한 선박 보급 및 용역 서비스를 경험하세요.</p>
+                <h1 data-translate-key="services_hero_title">서비스 안내</h1>
+                <p data-translate-key="services_hero_subtitle">한국과 파나마를 잇는 통합 솔루션을 확인해보세요. </p>
             </div>
         </section>
 
-        <section class="full-width-container">
-            <h2>선용 식료품 보급 (Provision)</h2>
-            <div class="promise-list">
-                <div class="promise-item">
-                    <div class="icon">🥩</div>
-                    <h3>신선한 식자재</h3>
-                    <p>고품질 육류, 어류, 채소, 과일 등 신선도 유지가 핵심인 식자재를 HACCP 기준에 맞춰 안전하게 공급합니다.</p>
+        <section class="main-services-section full-width-container">
+            <h2 data-translate-key="services_main_title">주요 서비스</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <div class="icon">🍎</div>
+                    <h3 data-translate-key="services_service1_h3">식자재/신선식품 공급</h3>
+                    <p data-translate-key="services_service1_p">선원들의 만족도를 높이는 다양한 신선 식자재와 풍부한 K-Food를 신속하게 조달합니다.</p>
                 </div>
-                <div class="promise-item">
-                    <div class="icon">🍚</div>
-                    <h3>한국/해외 식료품</h3>
-                    <p>선원들의 국적을 고려한 다양한 한국 식료품 및 해외 식료품을 맞춤형으로 제공합니다.</p>
+                <div class="service-item">
+                    <div class="icon">⚙️</div>
+                    <h3 data-translate-key="services_service2_h3">선용품 (Chandling) 공급</h3>
+                    <p data-translate-key="services_service2_p">갑판, 엔진, 안전 장비 등 모든 선박 운영에 필요한 고품질 선용품을 공급합니다.</p>
                 </div>
-                <div class="promise-item">
-                    <div class="icon">🥛</div>
-                    <h3>음료 및 기타 물품</h3>
-                    <p>다양한 음료, 주류, 유제품, 냉동/냉장 식품 등 모든 종류의 식자재를 완벽하게 준비하여 보급합니다.</p>
+                <div class="service-item">
+                    <div class="icon">⛽</div>
+                    <h3 data-translate-key="services_service3_h3">벙커 및 화학 제품</h3>
+                    <p data-translate-key="services_service3_p">주요 브랜드의 벙커 및 윤활유, 청소용 화학 제품을 신속하게 조달합니다.</p>
                 </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>선용 잡화 및 자재 (Store)</h2>
-            <div class="promise-list">
-                <div class="promise-item">
-                    <div class="icon">👷</div>
-                    <h3>안전 및 방재 용품</h3>
-                    <p>선원 안전을 위한 개인 보호 장비(PPE), 소화 장비, 구명 장비 등 필수 안전 용품을 공급합니다.</p>
-                </div>
-                <div class="promise-item">
-                    <div class="icon">💡</div>
-                    <h3>갑판 및 기관 자재</h3>
-                    <p>운항에 필요한 로프, 페인트, 공구, 전기 자재, 항해 장비 등 광범위한 잡화와 자재를 신속하게 조달합니다.</p>
-                </div>
-                <div class="promise-item">
-                    <div class="icon">🧼</div>
-                    <h3>청소 및 위생 용품</h3>
-                    <p>선내 청결을 위한 각종 세제, 세탁 용품, 화장실 용품 등 위생 관련 물품을 일괄 공급합니다.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section class="full-width-container">
-            <h2>선박 용역 및 수리</h2>
-            <div class="promise-list">
-                <div class="promise-item">
-                    <div class="icon">🔧</div>
-                    <h3>수리 서비스</h3>
-                    <p>선체, 갑판, 기관 등 필수적인 부분의 수리 서비스가 현지 전문 인력을 통해 신속하고 효율적으로 제공됩니다.</p>
-                </div>
-                <div class="promise-item">
-                    <div class="icon">🔗</div>
-                    <h3>용역 서비스</h3>
-                    <p>현지 직거래를 통한 최적의 가격과 선박 수리, 용역 서비스를 제공합니다.</p>
+                <div class="service-item">
+                    <div class="icon">🛠️</div>
+                    <h3 data-translate-key="services_service4_h3">현지 조달 및 수리 용역</h3>
+                    <p data-translate-key="services_service4_p">현지 직거래를 통한 최적의 가격과 선박 수리, 용역 서비스를 제공합니다.</p>
                 </div>
             </div>
         </section>
 
         <section class="contact-prompt-section">
-            <h2>당신의 다음 항해를 위한 신뢰할 수 있는 파트너</h2>
-            <p>지금 바로 문의하여 최적의 선박 보급 솔루션을 받아보세요. </p>
-            <a href="contact.html" class="button primary">문의하기</a>
+            <h2 data-translate-key="services_contact_h2">당신의 다음 항해를 위한 신뢰할 수 있는 파트너</h2>
+            <p data-translate-key="services_contact_p">지금 바로 문의하여 최적의 선박 보급 솔루션을 받아보세요. </p>
+            <a href="contact.html" class="button primary" data-translate-key="btn_contact">문의하기</a>
         </section>
     </main>
 
@@ -110,21 +78,21 @@
                 <p>NEO MARITIME SERVICE</p>
             </div>
             <div class="contact-info">
-                <h3>🇰🇷 한국 사무소</h3>
+                <h3 data-translate-key="footer_korea_h3">🇰🇷 한국 사무소</h3>
                 <p>광주광역시 광산구 목련로 394번길 64</p>
                 <p>Tel: +82 62 952 8085</p>
                 <p>Emergency: +82 10 4124 6955</p>
                 <p>Email: korea@neomaritimeservice.com</p>
             </div>
             <div class="contact-info">
-                <h3>🇵🇦 파나마 사무소</h3>
+                <h3 data-translate-key="footer_panama_h3">🇵🇦 파나마 사무소</h3>
                 <p>Calle 63a oeste 23, Panama, Provincia de Panama</p>
                 <p>Tel: +507 372 3929</p>
                 <p>Emergency: +507 6831 6708</p>
                 <p>Email: panama@neomartime.com</p>
             </div>
         </div>
-        <div class="copyright">
+        <div class="copyright" data-translate-key="footer_copyright">
             © 2025 NEO MARITIME SERVICE. All rights reserved.
         </div>
     </footer>

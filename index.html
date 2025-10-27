@@ -15,17 +15,17 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html" class="active">홈</a></li>
-                    <li><a href="about.html">회사소개</a></li>
-                    <li><a href="services.html">서비스</a></li>
-                    <li><a href="contact.html">문의하기</a></li>
+                    <li><a href="index.html" class="active" data-translate-key="menu_home">홈</a></li>
+                    <li><a href="about.html" data-translate-key="menu_about">회사소개</a></li>
+                    <li><a href="services.html" data-translate-key="menu_services">서비스</a></li>
+                    <li><a href="contact.html" data-translate-key="menu_contact">문의하기</a></li>
                 </ul>
             </nav>
             <div class="language-selector">
-                <button>KR 한국어</button>
-                <button>EN ENGLISH</button>
-                <button>ES ESPANOL</button>
-                <button>ZH 中文</button>
+                <button onclick="setLanguage('ko')">KR 한국어</button>
+                <button onclick="setLanguage('en')">EN ENGLISH</button>
+                <button onclick="setLanguage('es')">ES ESPANOL</button>
+                <button onclick="setLanguage('zh')">ZH 中文</button>
             </div>
         </div>
     </header>
@@ -33,39 +33,42 @@
     <main>
         <section class="hero-section" id="home-hero">
             <div class="hero-content">
-                <h1>안전한 항해를 위한 당신의 든든한 파트너</h1>
-                <p>한국과 파나마를 잇는 글로벌 선박 보급 및 서비스</p>
-                <a href="contact.html" class="button primary">문의하기</a>
+                <h1 data-translate-key="home_hero_title">안전한 항해를 위한 당신의 든든한 파트너</h1>
+                <p data-translate-key="home_hero_subtitle">글로벌 항해, 멈춤 없는 신뢰. 당신의 든든한 파트너, NEO MARITIME SERVICE.</p>
+                <div class="hero-buttons">
+                    <a href="services.html" class="button primary" data-translate-key="btn_services">서비스 둘러보기</a>
+                    <a href="contact.html" class="button secondary" data-translate-key="btn_contact">문의하기</a>
+                </div>
             </div>
         </section>
 
-        <section class="full-width-container">
-            <h2>주요 서비스</h2>
-            <div class="services-list">
-                <div class="service-item">
-                    <div class="icon">🍎</div>
-                    <h3>선용 식료품 보급 (Provision)</h3>
-                    <p>HACCP 기반의 철저한 위생 관리와 신선도를 최우선으로 하여 한국 및 해외 식자재를 파나마 운하 통항 선박에 신속하게 공급합니다.</p>
+        <section class="promise-section full-width-container">
+            <h2 data-translate-key="home_promise_title">우리의 약속</h2>
+            <div class="promise-list">
+                <div class="promise-item">
+                    <div class="icon">🚀</div>
+                    <h3 data-translate-key="home_promise1_h3">신속한 대응</h3>
+                    <p data-translate-key="home_promise1_p">현지 네트워크를 바탕으로 신속하고 정확한 공급을 보장합니다.</p>
                 </div>
-                <div class="service-item">
-                    <div class="icon">🛠️</div>
-                    <h3>선용 잡화 및 자재 (Store)</h3>
-                    <p>선박 운항에 필요한 모든 종류의 소모품, 안전 장비, 갑판/기관 자재 등 광범위한 물품을 신속하게 조달합니다.</p>
+                <div class="promise-item">
+                    <div class="icon">✅</div>
+                    <h3 data-translate-key="home_promise2_h3">품질 보증</h3>
+                    <p data-translate-key="home_promise2_p">국제 규격에 부합하는 검증된 제품만을 공급합니다.</p>
                 </div>
-                <div class="service-item">
-                    <div class="icon">🚢</div>
-                    <h3>선박 용역 및 수리</h3>
-                    <p>현지 직거래를 통한 최적의 가격과 선박 수리, 용역 서비스를 제공합니다.</p>
+                <div class="promise-item">
+                    <div class="icon">🤝</div>
+                    <h3 data-translate-key="home_promise3_h3">고객 중심</h3>
+                    <p data-translate-key="home_promise3_p">요구사항에 최적화된 맞춤형 솔루션을 제공합니다.</p>
                 </div>
             </div>
         </section>
 
         <section class="why-us-section">
-            <h2>왜 NEO MARITIME SERVICE인가?</h2>
-            <p>단순한 공급업체를 넘어 귀사의 신뢰할 수 있는 파트너가 됩니다.</p>
-            <p>귀사의 성공적인 항해를 위한 최고의 서비스를 제공합니다.</p>
-            <p>뛰어난 서비스, 신속한 대응, 그리고 타협 없는 품질로 귀사의 모든 요구를 충족시키기 위해 최선을 다합니다.</p>
-            <a href="about.html" class="button primary">회사 소개</a>
+            <h2 data-translate-key="home_whyus_title">왜 NEO MARITIME SERVICE인가?</h2>
+            <p data-translate-key="home_whyus_p1">단순한 공급업체를 넘어 귀사의 신뢰할 수 있는 파트너가 됩니다.</p>
+            <p data-translate-key="home_whyus_p2">우리는 단순히 제품을 배달하는 것이 아니라, 귀사의 성공적인 항해를 위한 파트너십을 구축합니다.</p>
+            <p data-translate-key="home_whyus_p3">뛰어난 서비스, 신속한 대응, 그리고 타협 없는 품질로 귀사의 모든 요구를 충족시키기 위해 최선을 다합니다.</p>
+            <a href="about.html" class="button primary" data-translate-key="btn_about">회사 소개</a>
         </section>
     </main>
 
@@ -76,21 +79,21 @@
                 <p>NEO MARITIME SERVICE</p>
             </div>
             <div class="contact-info">
-                <h3>🇰🇷 한국 사무소</h3>
+                <h3 data-translate-key="footer_korea_h3">🇰🇷 한국 사무소</h3>
                 <p>광주광역시 광산구 목련로 394번길 64</p>
                 <p>Tel: +82 62 952 8085</p>
                 <p>Emergency: +82 10 4124 6955</p>
                 <p>Email: korea@neomaritimeservice.com</p>
             </div>
             <div class="contact-info">
-                <h3>🇵🇦 파나마 사무소</h3>
+                <h3 data-translate-key="footer_panama_h3">🇵🇦 파나마 사무소</h3>
                 <p>Calle 63a oeste 23, Panama, Provincia de Panama</p>
                 <p>Tel: +507 372 3929</p>
                 <p>Emergency: +507 6831 6708</p>
                 <p>Email: panama@neomartime.com</p>
             </div>
         </div>
-        <div class="copyright">
+        <div class="copyright" data-translate-key="footer_copyright">
             © 2025 NEO MARITIME SERVICE. All rights reserved.
         </div>
     </footer>
