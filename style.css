@@ -1,620 +1,486 @@
-/* style.css */
-/* ========== Reset & Base ========== */
-* { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
-}
-html, body { 
-    scroll-behavior: smooth; 
-}
+/* 글로벌 스타일 */
 body {
-    /* 3. 기본 글자 크기 증가 (15px -> 16px) */
-    font-family: "Noto Sans KR", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", sans-serif;
-    color: #111827;
-    background: #ffffff;
-    line-height: 1.6;
-    font-size: 16px; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
 }
 
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
-button { cursor: pointer; border: none; background: none; }
-
-/* ========== Variables ========== */
-:root {
-    --primary-color: #0b1220; /* 진한 네이비 */
-    --secondary-color: #ff9900; /* 오렌지/골드 */
-    --button-apricot: #fdd9b5; /* 옅은 살구색 추가 (사용자 요청) */
-    --text-dark: #111827;
-    --text-light: #e5e7eb;
-    --bg-light: #f8fafc;
-    --border-color: #e5e7eb;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* ========== Utility & Layout ========== */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.text-center { text-align: center; }
-
-.section-padded {
-    padding: 80px 0;
-}
-
-.section-title {
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.lead {
-    font-size: 20px;
-    color: #4b5563;
-    margin-bottom: 40px;
-}
-
-/* 2. 버튼 크기 및 색상 변경 요청 반영 */
-.btn-primary, .btn-secondary {
+.button {
     display: inline-block;
-    padding: 14px 25px; /* 크기 증가 */
-    border-radius: 6px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s, color 0.3s;
-    font-size: 18px; /* 글자 크기 증가 */
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.btn-primary {
-    background-color: var(--secondary-color); /* 오렌지/골드 */
+.primary {
+    background-color: #004d99; /* 네이비 블루 */
     color: white;
 }
 
-.btn-primary:hover {
-    background-color: #e68a00; /* 약간 어두운 오렌지 */
+.primary:hover {
+    background-color: #003366;
 }
 
-.btn-secondary {
-    background-color: var(--button-apricot); /* 옅은 살구색 */
-    color: var(--primary-color);
-    border: 1px solid var(--secondary-color);
+.secondary {
+    background-color: #f9f9f9;
+    color: #004d99;
+    border: 1px solid #004d99;
 }
 
-.btn-secondary:hover {
-    background-color: var(--secondary-color);
-    color: white;
+.secondary:hover {
+    background-color: #e0e0e0;
 }
 
-/* ========== Header & Navigation ========== */
-.site-header {
+/* 헤더/내비게이션 스타일 */
+header {
     background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid #ddd;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.header-inner {
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 80px;
+    padding: 10px 20px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
 }
 
 .logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.company-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #004d99;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    align-items: center;
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--primary-color);
 }
 
-/* 1. 로고 크기 조정 요청 반영 */
-.logo img {
-    height: 45px; /* 높이 45px로 조정 */
-    margin-right: 15px;
-    transition: height 0.3s;
+nav ul li {
+    margin-left: 20px;
 }
 
-.main-nav ul {
-    display: flex;
-    gap: 30px;
-}
-
-.main-nav a {
-    display: block;
-    padding: 10px 0;
-    color: var(--text-dark);
-    font-size: 18px; /* 폰트 크기 2pt 증가 요청 반영 */
+nav ul li a {
+    color: #333;
     font-weight: 500;
+    padding: 5px 0;
     transition: color 0.3s;
 }
 
-.main-nav a:hover,
-.main-nav a.active {
-    color: var(--secondary-color);
+nav ul li a:hover, nav ul li a.active {
+    color: #004d99;
+    border-bottom: 2px solid #004d99;
 }
 
-.language-selector select {
-    padding: 8px 15px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    font-size: 15px;
+.language-selector button {
+    background: none;
+    border: 1px solid #ccc;
+    color: #555;
+    padding: 5px 10px;
+    margin-left: 5px;
+    font-size: 0.8em;
     cursor: pointer;
-    background-color: var(--bg-light);
-    color: var(--text-dark);
 }
 
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+.language-selector button:hover {
+    background-color: #eee;
 }
 
-/* ========== Hero Section ========== */
-.hero, .page-hero {
-    height: 70vh;
+/* 히어로 섹션 (상단 배경) */
+.hero-section {
+    position: relative;
+    height: 400px;
     background-size: cover;
     background-position: center;
+    color: white;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    text-align: center;
-    position: relative;
-    transition: background-image 1s ease-in-out;
+    overflow: hidden;
 }
 
-.hero::before, .page-hero::before {
+.hero-section::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* 오버레이 */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
-.hero-content, .page-hero-content {
+.hero-content {
+    position: relative;
     z-index: 2;
-    max-width: 800px;
-    padding: 20px;
+    padding: 0 20px;
 }
 
-.hero-title {
-    font-size: 48px;
-    font-weight: 800;
+.hero-content h1 {
+    font-size: 3em;
     margin-bottom: 15px;
-    line-height: 1.2;
 }
 
-.hero-subtitle {
-    font-size: 24px;
-    font-weight: 300;
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* 개별 히어로 배경 설정 (JS에서 동적 배경 설정을 위해 ID 사용) */
+#home-hero { background-image: url('resized_1.jpg'); } /* JS가 실행되기 전 기본값 */
+#about-hero { background-image: url('resized_1.jpg'); } /*  */
+#services-hero { background-image: url('resized_2.jpg'); } /*  */
+#contact-hero { background-image: url('resized_3.jpg'); } /*  */
+
+
+/* 섹션 공통 스타일 */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2em;
+    color: #004d99;
     margin-bottom: 40px;
 }
 
-.hero .btn-group {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-/* ========== Feature & Section Styles (index.html) ========== */
-#our-promise {
-    background-color: var(--bg-light);
-}
-
-.feature-grid {
-    display: flex;
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.feature-item {
-    flex: 1;
-    padding: 30px;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.feature-item:hover {
-    transform: translateY(-5px);
-}
-
-.feature-item i {
-    font-size: 40px;
-    color: var(--secondary-color);
-    margin-bottom: 20px;
-}
-
-.feature-item h3 {
-    font-size: 24px;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-#why-us {
-    text-align: center;
-}
-
-/* ========== About Page Styles (about.html) ========== */
-#mission, #values, #management {
+/* 컨테이너 폭 최대, 세로 배치 요소 스타일 */
+.full-width-container {
     padding: 60px 0;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
-#mission {
-    background-color: var(--bg-light);
+.full-width-container h2 {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
 }
 
-.mission-grid {
+.promise-list, .mission-list, .value-list, .services-list {
     display: flex;
+    flex-direction: column; /* 세로 배치  */
+    max-width: 1200px; /* 컨테이너의 폭은 홈페이지 최대 폭으로  */
+    margin: 0 auto;
+    padding: 0 20px;
     gap: 30px;
-    margin-top: 40px;
 }
 
-.mission-item, .value-item {
-    flex: 1;
-    padding: 25px;
-    border-left: 5px solid var(--secondary-color);
-    background: #ffffff;
-    border-radius: 0 8px 8px 0;
+.promise-item, .mission-item, .value-item, .service-item {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: left;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.mission-item h4, .value-item h4 {
-    font-size: 20px;
-    color: var(--primary-color);
-    margin-bottom: 10px;
+.promise-item .icon, .mission-item .icon, .value-item .icon, .service-item .icon {
+    font-size: 2em;
+    margin-bottom: 15px;
 }
 
-.value-grid {
-    display: flex;
-    gap: 30px;
-    margin-top: 40px;
+.promise-item h3, .mission-item h3, .value-item h3, .service-item h3 {
+    color: #004d99;
+    margin-top: 0;
 }
 
-.management-grid {
+/* 회사소개 - 경영진 섹션 */
+.management-section {
+    background-color: #f4f4f4;
+}
+
+.management-section .subtitle {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.ceo-profiles {
     display: flex;
-    gap: 30px;
-    margin-top: 40px;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto 40px;
 }
 
-.manager-item {
-    flex: 1 1 350px;
-    max-width: 450px;
-    background: var(--bg-light);
-    padding: 20px;
+.ceo-card {
+    flex: 1;
+    background-color: #fff;
+    padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
 }
 
-.manager-item img {
+.ceo-photo {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
     object-fit: cover;
+    border-radius: 50%;
     margin-bottom: 15px;
-    border: 3px solid var(--secondary-color);
+    border: 3px solid #004d99;
 }
 
-.manager-item h4 {
-    font-size: 22px;
-    color: var(--primary-color);
+.ceo-card h3 {
+    color: #333;
     margin-bottom: 5px;
 }
 
-.manager-item em {
-    display: block;
-    font-style: normal;
-    color: var(--secondary-color);
+.ceo-card .role {
+    color: #004d99;
     font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.why-us-section, .contact-prompt-section {
+    padding: 80px 20px;
+}
+
+/* 문의하기 페이지 스타일 */
+.contact-details-form-section {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+}
+
+.office-info-container {
+    display: flex;
+    justify-content: space-between; /* 가로 배치  */
+    gap: 40px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.office-info {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.office-info h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #004d99;
+}
+
+.contact-form-container {
+    display: flex;
+    gap: 40px;
+}
+
+.contact-form {
+    flex: 1;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.contact-form legend {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #004d99;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    border-bottom: 2px solid #004d99;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea,
+.contact-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #004d99;
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #003366;
+}
+
+/* 지도 섹션 */
+.map-section {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background: none;
+    text-align: left;
+}
+
+.map-frame {
+    flex: 1;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #fff;
+}
+
+.map-frame h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #004d99;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #333;
+    color: #ccc;
+    padding: 30px 20px;
+    font-size: 0.9em;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #555;
+}
+
+.footer-logo img {
+    height: 30px;
+    filter: invert(100%);
+}
+
+.footer-logo p {
+    font-weight: bold;
+    color: white;
+}
+
+.contact-info h3 {
+    color: #fff;
+    font-size: 1.1em;
     margin-bottom: 10px;
 }
 
-/* ========== Services Page Styles (services.html) ========== */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.service-card {
-    background: var(--bg-light);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.3s;
-}
-
-.service-card:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.service-card i {
-    font-size: 35px;
-    color: var(--secondary-color);
-    margin-bottom: 15px;
-}
-
-.service-card h4 {
-    font-size: 22px;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-#cta {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 60px 0;
-}
-
-#cta .section-title {
-    color: white;
-}
-
-#cta .lead {
-    color: var(--text-light);
-}
-
-/* ========== Contact Page Styles (contact.html) ========== */
-
-/* Contact Grid 구조: 6개의 컬럼을 가로로 배치 (2x3 줄) */
-.contact-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.contact-col {
-    padding: 30px;
-    border-radius: 8px;
-    background: var(--bg-light);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    flex-basis: calc(50% - 15px); /* 기본적으로 2개씩 가로로 배치 */
-    min-width: 300px; /* 너무 작아지지 않도록 최소 너비 설정 */
-}
-
-/* 1. 연락처 정보 (2개 컬럼, 가로 배치) */
-.contact-col.office-col {
-    order: 1; 
-    /* office-col에서는 office-details가 내부 스타일링을 담당 */
-    padding: 0;
-    background: none; 
-    box-shadow: none;
-    flex-basis: calc(50% - 15px); 
-}
-
-.office-details {
-    padding: 30px; 
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    height: 100%; /* 높이를 동일하게 유지 */
-    text-align: left;
-}
-
-.office-details h3 {
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    font-size: 24px;
-}
-
-.office-details p {
-    margin-bottom: 8px;
-    font-size: 16px;
-    display: flex;
-    align-items: flex-start;
-}
-
-.office-details i {
-    color: var(--secondary-color);
-    margin-right: 10px;
-    width: 20px;
-    text-align: center;
-    padding-top: 3px;
-}
-
-
-/* 2. 문의 양식 (2개 컬럼, 가로 배치) */
-.contact-col.form-col {
-    order: 2; /* 두 번째 줄에 배치 */
-    flex-basis: calc(50% - 15px);
-    text-align: left;
-}
-
-.contact-col.form-col h3 {
-    text-align: center;
-    font-size: 24px;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.form-col form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* 3. 지도 (2개 컬럼, 가로 배치) */
-.contact-col.map-col {
-    order: 3; /* 세 번째 줄에 배치 */
-    padding: 0; /* 지도가 공간을 모두 채우도록 padding 제거 */
-    background: none;
-    box-shadow: none;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden; /* iframe border-radius 적용 */
-}
-
-.map-col h3 {
-    text-align: left;
-    padding: 15px 30px 0;
-    font-size: 22px;
-    color: var(--primary-color);
-    background: #fff;
-}
-
-.map-col iframe {
-    display: block;
-    width: 100%;
-}
-
-
-/* 문의 양식 Input 스타일 */
-.form-col input[type="text"],
-.form-col input[type="email"],
-.form-col input[type="tel"], 
-.form-col textarea {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    width: 100%;
-}
-
-.form-col textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-
-.form-col input[type="file"] {
-    padding: 10px 0;
-    border: none;
-}
-
-.form-col button[type="submit"] {
-    background-color: var(--secondary-color); 
-    color: white;
-    padding: 14px 25px; 
-    border-radius: 6px;
-    font-size: 18px;
-    transition: background-color 0.3s;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.form-col button[type="submit"]:hover {
-    background-color: #e68a00;
-}
-
-
-/* ========== Footer ========== */
-.site-footer {
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    padding: 40px 0 20px;
-    font-size: 14px;
-}
-
-.footer-offices {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 20px;
-}
-
-.footer-office-info .logo {
-    color: white;
-    margin-bottom: 15px;
-}
-
-.footer-office-info p {
-    margin-bottom: 5px;
+.contact-info p {
+    margin: 5px 0;
 }
 
 .copyright {
     text-align: center;
-    padding-top: 10px;
-    font-size: 13px;
-    color: #9ca3af;
+    margin-top: 20px;
+    color: #999;
 }
 
-
-/* ========== Responsive Design (모바일) ========== */
-@media (max-width: 992px) {
-    .header-inner {
+/* 반응형 디자인 */
+@media (max-width: 900px) {
+    .header-container {
         flex-wrap: wrap;
-        min-height: initial;
-        padding: 10px 20px;
+        justify-content: center;
     }
-    .main-nav {
+    
+    nav {
         order: 3;
         width: 100%;
         margin-top: 10px;
-        text-align: center;
     }
-    .main-nav ul {
+
+    nav ul {
         justify-content: center;
-        gap: 15px;
     }
-}
+    
+    .language-selector {
+        order: 2;
+    }
 
-@media (max-width: 768px) {
-    /* 기본 레이아웃 재설정 */
-    .section-padded { padding: 40px 0; }
-    .section-title { font-size: 32px; margin-bottom: 15px; }
-    .lead { font-size: 18px; margin-bottom: 30px; }
-    .hero, .page-hero { height: 50vh; }
-    .hero-title { font-size: 36px; }
-    .hero-subtitle { font-size: 20px; }
+    .promise-list, .mission-list, .value-list, .services-list {
+        gap: 20px;
+    }
 
-    /* Contact Page 모바일 조정: 모든 컬럼을 세로로 배치 */
-    .contact-grid {
+    .office-info-container, .contact-form-container, .ceo-profiles, .map-section {
         flex-direction: column;
         gap: 20px;
     }
 
-    .contact-col {
-        flex-basis: 100%;
-        min-width: 100%;
-        padding: 20px;
-    }
-    
-    .contact-col.office-col {
-        padding: 0;
-    }
-    
-    .office-details {
-        padding: 20px;
+    .ceo-card {
+        max-width: none;
     }
 
-    .contact-col.map-col h3 {
-        padding: 15px 20px 0;
-    }
-
-    /* 푸터 */
-    .footer-offices {
+    .footer-container {
         flex-direction: column;
-        align-items: center;
         text-align: center;
     }
-    .footer-office-info .logo {
-        margin-left: auto;
-        margin-right: auto;
+    
+    .footer-logo {
+        margin-bottom: 20px;
     }
-    .footer-office-info p {
-        margin-bottom: 15px;
+}
+
+@media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    
+    .language-selector button {
+        padding: 5px 8px;
+        font-size: 0.7em;
     }
 }
