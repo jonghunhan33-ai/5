@@ -67,10 +67,11 @@ const translations = {
         contact_hero_subtitle: "귀사의 해상 운영에 필요한 모든 사항에 대해 문의해 주세요.",
         contact_korea_title: "🇰🇷 한국 사무소",
         contact_panama_title: "🇵🇦 파나마 사무소",
-        contact_form_korea_legend: "🇰🇷 한국 문의 양식",
-        contact_form_panama_legend: "🇵🇦 파나마 문의 양식",
+        contact_form_korea_inquiry: "🇰🇷 한국 문의",
+        contact_form_panama_inquiry: "🇵🇦 파나마 문의",
         contact_label_name: "이름 또는 선명",
         contact_label_email: "이메일",
+        contact_label_phone: "연락처",
         contact_label_message: "문의 내용",
         contact_label_file: "첨부파일",
         contact_btn_submit: "보내기",
@@ -149,10 +150,11 @@ const translations = {
         contact_hero_subtitle: "Please inquire about all matters required for your maritime operations.",
         contact_korea_title: "🇰🇷 Korea Office",
         contact_panama_title: "🇵🇦 Panama Office",
-        contact_form_korea_legend: "🇰🇷 Korea Inquiry Form",
-        contact_form_panama_legend: "🇵🇦 Panama Inquiry Form",
+        contact_form_korea_inquiry: "🇰🇷 Korea Inquiry",
+        contact_form_panama_inquiry: "🇵🇦 Panama Inquiry",
         contact_label_name: "Name or Vessel Name",
         contact_label_email: "Email",
+        contact_label_phone: "Phone Number",
         contact_label_message: "Inquiry Details",
         contact_label_file: "Attachment",
         contact_btn_submit: "Send",
@@ -188,55 +190,56 @@ const translations = {
         btn_about: "Acerca de Nosotros",
         // About
         about_hero_title: "Acerca de Nosotros",
-        about_hero_subtitle: "Red Global de Suministro de Barcos que Conecta Corea y Panamá",
+        about_hero_subtitle: "Red Global de Suministro de Buques conectando Corea y Panamá",
         about_mission_title: "Nuestra Misión",
         about_mission1_h3: "Servicio Rápido y Preciso",
-        about_mission1_p: "Proporcionamos un servicio rápido y preciso las 24 horas del día para satisfacer las solicitudes de los clientes.",
+        about_mission1_p: "Proporcionamos un servicio rápido y preciso las 24 horas del día para satisfacer las solicitudes del cliente.",
         about_mission2_h3: "Servicio Centrado en la Confianza y la Calidad",
         about_mission2_p: "Operamos un estricto sistema de gestión de higiene y calidad que se adhiere a los estándares HACCP.",
         about_mission3_h3: "Crecimiento Basado en la Asociación",
-        about_mission3_p: "Nuestro objetivo es el éxito del cliente y construir confianza a largo plazo para el crecimiento mutuo.",
+        about_mission3_p: "Nuestro objetivo es el éxito del cliente y construimos confianza a largo plazo para el crecimiento mutuo.",
         about_value_title: "Valores Fundamentales",
-        about_value1_h3: "Confiabilidad",
+        about_value1_h3: "Fiabilidad",
         about_value1_p: "Entregamos la calidad prometida en el tiempo prometido.",
         about_value2_h3: "Red Global",
         about_value2_p: "Contamos con una cadena de suministro global única que conecta Panamá y Corea.",
         about_value3_h3: "Enfoque en el Cliente",
         about_value3_p: "Priorizamos las necesidades del cliente para proporcionar servicios personalizados.",
         about_mgmt_title: "Equipo Directivo",
-        about_mgmt_subtitle: "Expertos experimentados apoyan su viaje seguro.",
+        about_mgmt_subtitle: "Expertos experimentados apoyan su navegación segura.",
         about_ceo1_name: "Jonghun Han (CEO de Panamá)",
         about_ceo1_role: "CEO de Panamá",
-        about_ceo1_p: "Como experto con más de 20 años de experiencia en el sector global de transporte marítimo y logística, lidera NEO MARITIME SERVICE, centrándose en la expansión de la red global.",
+        about_ceo1_p: "Como experto con más de 20 años de experiencia en el sector marítimo y logístico global, lidera NEO MARITIME SERVICE, centrándose en la expansión de la red global.",
         about_ceo2_name: "Kyunghee Kim (CEO de Corea)",
         about_ceo2_role: "CEO de Corea",
-        about_ceo2_p: "Como representante de una empresa de logística coreana y experta en barcos con más de 20 años de experiencia, gestiona las operaciones coreanas, proporcionando servicios de suministro eficientes y sistemáticos.",
+        about_ceo2_p: "Como representante de una empresa de logística coreana y experta en buques con más de 20 años de experiencia, ella gestiona las operaciones coreanas, proporcionando servicios de suministro eficientes y sistemáticos.",
         btn_view_services: "Ver Servicios",
         // Services
-        services_hero_title: "Información de Servicios",
-        services_hero_subtitle: "Vea las soluciones integradas que conectan Corea y Panamá.",
+        services_hero_title: "Información del Servicio",
+        services_hero_subtitle: "Consulte las soluciones integradas que conectan Corea y Panamá.",
         services_main_title: "Servicios Principales",
         services_service1_h3: "Suministro de Provision/Alimentos Frescos",
-        services_service1_p: "Procuramos rápidamente varios ingredientes frescos y abundante K-Food para mejorar la satisfacción de la tripulación.",
-        services_service2_h3: "Suministro de Almacenes (Chandling) para Barcos",
-        services_service2_p: "Suministramos almacenes para barcos de alta calidad requeridos para todas las operaciones, incluyendo cubierta, motor y equipo de seguridad.",
+        services_service1_p: "Abastecemos rápidamente una variedad de ingredientes frescos y abundante K-Food para mejorar la satisfacción de la tripulación.",
+        services_service2_h3: "Suministro de Suministros para Buques (Chandling)",
+        services_service2_p: "Suministramos provisiones de alta calidad necesarias para todas las operaciones de los buques, incluyendo equipos de cubierta, motor y seguridad.",
         services_service3_h3: "Búnker y Productos Químicos",
         services_service3_p: "Suministramos rápidamente búnker, lubricantes de las principales marcas y productos químicos de limpieza.",
-        services_service4_h3: "Abastecimiento Local y Servicios de Reparación",
-        services_service4_p: "Ofrecemos precios óptimos para la reparación y servicios de barcos a través de transacciones directas locales.",
-        services_contact_h2: "Su Socio Confiable para su Próximo Viaje",
-        services_contact_p: "Contáctenos ahora para recibir la solución óptima de suministro de barcos.",
+        services_service4_h3: "Suministro Local y Servicios de Reparación",
+        services_service4_p: "Ofrecemos precios óptimos para la reparación y servicios de buques a través de transacciones directas locales.",
+        services_contact_h2: "Su Socio Confiable para Su Próximo Viaje",
+        services_contact_p: "Contáctenos ahora para recibir la solución de suministro de buques óptima.",
         // Contact
         contact_hero_title: "Contacto",
-        contact_hero_subtitle: "Consulte sobre todos los asuntos requeridos para sus operaciones marítimas.",
+        contact_hero_subtitle: "Por favor, consulte sobre todos los asuntos requeridos para sus operaciones marítimas.",
         contact_korea_title: "🇰🇷 Oficina de Corea",
         contact_panama_title: "🇵🇦 Oficina de Panamá",
-        contact_form_korea_legend: "🇰🇷 Formulario de Consulta de Corea",
-        contact_form_panama_legend: "🇵🇦 Formulario de Consulta de Panamá",
+        contact_form_korea_inquiry: "🇰🇷 Consulta de Corea",
+        contact_form_panama_inquiry: "🇵🇦 Consulta de Panamá",
         contact_label_name: "Nombre o Nombre del Buque",
         contact_label_email: "Correo Electrónico",
+        contact_label_phone: "Número de Contacto",
         contact_label_message: "Detalles de la Consulta",
-        contact_label_file: "Archivo Adjunto",
+        contact_label_file: "Adjunto",
         contact_btn_submit: "Enviar",
         contact_map_korea_h2: "Ubicación de la Oficina de Corea",
         contact_map_panama_h2: "Ubicación de la Oficina de Panamá",
@@ -248,76 +251,77 @@ const translations = {
     zh: {
         // Menu
         menu_home: "主页",
-        menu_about: "关于我们",
+        menu_about: "公司介绍",
         menu_services: "服务",
         menu_contact: "联系我们",
         // Home
         home_hero_title: "您安全航行的可靠伙伴",
-        home_hero_subtitle: "全球航行，不间断的信任。NEO MARITIME SERVICE，您坚实的伙伴。",
+        home_hero_subtitle: "全球航行, 永不间断的信任. 您的坚实伙伴, NEO MARITIME SERVICE.",
         home_promise_title: "我们的承诺",
         home_promise1_h3: "快速响应",
-        home_promise1_p: "我们以当地网络为基础，确保快速准确的供应。",
+        home_promise1_p: "基于当地网络, 我们确保快速准确的供应.",
         home_promise2_h3: "质量保证",
-        home_promise2_p: "我们只供应符合国际标准的经过验证的产品。",
+        home_promise2_p: "我们只提供符合国际标准的经过验证的产品.",
         home_promise3_h3: "以客户为中心",
-        home_promise3_p: "我们提供根据您的要求优化的定制解决方案。",
+        home_promise3_p: "我们提供针对您的需求优化的定制解决方案.",
         home_whyus_title: "为什么选择 NEO MARITIME SERVICE?",
-        home_whyus_p1: "我们不仅是供应商，更是您值得信赖的伙伴。",
-        home_whyus_p2: "我们不仅交付产品，更致力于为您的成功航行建立合作伙伴关系。",
-        home_whyus_p3: "我们致力于通过卓越的服务、快速响应和毫不妥协的质量来满足您的所有需求。",
+        home_whyus_p1: "我们不仅仅是供应商; 我们是您值得信赖的伙伴.",
+        home_whyus_p2: "我们不只是交付产品, 而是为您成功的航行建立合作伙伴关系.",
+        home_whyus_p3: "我们致力于通过卓越的服务, 快速的响应和毫不妥协的质量来满足您的所有需求.",
         btn_services: "查看服务",
         btn_contact: "联系我们",
-        btn_about: "关于我们",
+        btn_about: "公司介绍",
         // About
-        about_hero_title: "关于我们",
+        about_hero_title: "公司介绍",
         about_hero_subtitle: "连接韩国和巴拿马的全球船舶补给网络",
         about_mission_title: "我们的使命",
         about_mission1_h3: "快速准确的服务",
-        about_mission1_p: "我们全天候 24 小时提供快速准确的服务，以满足客户要求。",
+        about_mission1_p: "我们全天 24 小时提供快速准确的服务, 以满足客户要求.",
         about_mission2_h3: "以信任和质量为中心的服务",
-        about_mission2_p: "我们运营严格的卫生和质量管理系统，遵守 HACCP 标准。",
-        about_mission3_h3: "基于合作关系的成长",
-        about_mission3_p: "我们的目标是客户的成功，并建立长期信任关系以共同成长。",
+        about_mission2_p: "我们运营着严格遵守 HACCP 标准的卫生和质量管理系统.",
+        about_mission3_h3: "基于伙伴关系的成长",
+        about_mission3_p: "我们的目标是客户的成功, 并建立长期信任以实现共同成长.",
         about_value_title: "核心价值",
         about_value1_h3: "可靠性",
-        about_value1_p: "我们按承诺的时间交付承诺的质量。",
+        about_value1_p: "我们在承诺的时间内交付承诺的质量.",
         about_value2_h3: "全球网络",
-        about_value2_p: "我们拥有连接巴拿马和韩国的独特全球供应链。",
+        about_value2_p: "我们拥有连接巴拿马和韩国的独特全球供应链.",
         about_value3_h3: "以客户为中心",
-        about_value3_p: "我们优先考虑客户需求，提供定制化服务。",
+        about_value3_p: "我们优先考虑客户需求, 提供定制服务.",
         about_mgmt_title: "管理团队",
-        about_mgmt_subtitle: "经验丰富的专家为您安全航行提供支持。",
-        about_ceo1_name: "Han Jonghun 代表 (巴拿马 CEO)",
+        about_mgmt_subtitle: "经验丰富的专家为您安全航行提供支持.",
+        about_ceo1_name: "韩宗勋 代表 (Han Jonghun)",
         about_ceo1_role: "巴拿马 CEO",
-        about_ceo1_p: "作为在全球海运和物流领域拥有 20 多年经验的专家，他领导 NEO MARITIME SERVICE，专注于全球网络的扩张。",
-        about_ceo2_name: "Kim Kyunghee 代表 (韩国 CEO)",
+        about_ceo1_p: "作为全球航运和物流领域拥有 20 多年经验的专家, 他领导 NEO MARITIME SERVICE, 专注于全球网络扩张.",
+        about_ceo2_name: "金庆熙 代表 (Kim Kyunghee)",
         about_ceo2_role: "韩国 CEO",
-        about_ceo2_p: "作为韩国物流公司代表和拥有 20 多年经验的船舶专家，她全面负责韩国运营，提供高效、系统的补给服务。",
+        about_ceo2_p: "作为韩国物流公司代表和拥有 20 多年经验的船舶专家, 她负责韩国运营, 提供高效和系统的补给服务.",
         btn_view_services: "查看服务",
         // Services
-        services_hero_title: "服务信息",
-        services_hero_subtitle: "查看连接韩国和巴拿马的集成解决方案。",
+        services_hero_title: "服务介绍",
+        services_hero_subtitle: "查看连接韩国和巴拿马的集成解决方案.",
         services_main_title: "主要服务",
-        services_service1_h3: "伙食/新鲜食品供应",
-        services_service1_p: "我们快速采购各种新鲜食材和丰富的韩国食品，以提高船员满意度。",
+        services_service1_h3: "食品/新鲜食品供应",
+        services_service1_p: "我们迅速采购各种新鲜食材和丰富的 K-Food, 以提高船员满意度.",
         services_service2_h3: "船用物品 (Chandling) 供应",
-        services_service2_p: "我们供应所有船舶运营所需的高质量船用物品，包括甲板、轮机和安全设备。",
-        services_service3_h3: "燃油和化学品",
-        services_service3_p: "我们快速采购主要品牌的燃油、润滑油和清洁化学产品。",
+        services_service2_p: "我们供应船舶运营所需的所有高质量船用物品, 包括甲板, 机器和安全设备.",
+        services_service3_h3: "燃料和化学产品",
+        services_service3_p: "我们迅速采购主要品牌的燃料, 润滑油和清洁化学产品.",
         services_service4_h3: "当地采购和维修服务",
-        services_service4_p: "我们通过当地直销提供最优价格的船舶维修和劳务服务。",
+        services_service4_p: "我们通过当地直接交易提供最优价格和船舶维修, 服务.",
         services_contact_h2: "您下一次航行的可靠伙伴",
-        services_contact_p: "立即联系我们，获取最佳船舶补给解决方案。",
+        services_contact_p: "立即联系我们, 获取最佳船舶补给解决方案.",
         // Contact
         contact_hero_title: "联系我们",
-        contact_hero_subtitle: "请咨询您的海事运营所需的所有事项。",
+        contact_hero_subtitle: "请咨询您的海事运营所需的所有事项.",
         contact_korea_title: "🇰🇷 韩国办事处",
         contact_panama_title: "🇵🇦 巴拿马办事处",
-        contact_form_korea_legend: "🇰🇷 韩国咨询表格",
-        contact_form_panama_legend: "🇵🇦 巴拿马咨询表格",
+        contact_form_korea_inquiry: "🇰🇷 韩国咨询",
+        contact_form_panama_inquiry: "🇵🇦 巴拿马咨询",
         contact_label_name: "姓名或船名",
         contact_label_email: "电子邮件",
-        contact_label_message: "咨询详情",
+        contact_label_phone: "联系电话",
+        contact_label_message: "咨询内容",
         contact_label_file: "附件",
         contact_btn_submit: "发送",
         contact_map_korea_h2: "韩国办事处位置",
@@ -325,37 +329,32 @@ const translations = {
         // Footer
         footer_korea_h3: "🇰🇷 韩国办事处",
         footer_panama_h3: "🇵🇦 巴拿马办事处",
-        footer_copyright: "© 2025 NEO MARITIME SERVICE. 版权所有."
-    }
+        footer_copyright: "© 2025 NEO MARITIME SERVICE. All rights reserved."
+    },
+    // ... (나머지 번역 내용은 변경 없음)
 };
 
-function setLanguage(langCode) {
-    const texts = translations[langCode];
-    if (!texts) return;
+// Function to apply translation
+function applyTranslation(langCode) {
+    const t = translations[langCode] || translations['ko'];
 
-    // 1. HTML lang 속성 변경
-    document.documentElement.setAttribute('lang', langCode);
-
-    // 2. data-translate-key를 가진 모든 요소의 텍스트 업데이트
     document.querySelectorAll('[data-translate-key]').forEach(element => {
         const key = element.getAttribute('data-translate-key');
-        if (texts[key]) {
-            // 버튼/링크 등 텍스트 노드만 변경해야 하는 경우
-            if (element.tagName === 'BUTTON' || (element.tagName === 'A' && element.classList.contains('button'))) {
-                element.textContent = texts[key];
-            } else if (element.tagName === 'INPUT' && element.type === 'submit') {
-                 element.value = texts[key];
+        if (t[key]) {
+            // Placeholder/title attributes for inputs and textareas can also be translated
+            if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
+                element.setAttribute('placeholder', t[key]);
+            } else if (element.tagName === 'TEXTAREA' && element.hasAttribute('placeholder')) {
+                 element.setAttribute('placeholder', t[key]);
+            } else if (element.tagName === 'TITLE') { // Handle <title> tag if needed, though usually set in JS/backend
+                document.title = t[key] + document.title.substring(document.title.indexOf('-'));
             } else {
-                // 일반 텍스트 변경 (h1, p, a, legend, label 등)
-                element.textContent = texts[key];
+                element.textContent = t[key];
             }
         }
     });
 
-    // 3. 현재 언어를 Local Storage에 저장 (페이지 이동 시 유지)
-    localStorage.setItem('selectedLanguage', langCode);
-
-    // 4. 언어 선택 버튼의 상태 업데이트
+    // Handle language selector active state
     document.querySelectorAll('.language-selector button').forEach(button => {
         const buttonLangCode = button.getAttribute('onclick').match(/'(.*?)'/)[1];
         if (buttonLangCode === langCode) {
@@ -364,6 +363,12 @@ function setLanguage(langCode) {
             button.classList.remove('active-lang');
         }
     });
+}
+
+
+function setLanguage(langCode) {
+    localStorage.setItem('selectedLanguage', langCode);
+    applyTranslation(langCode);
 }
 
 
@@ -395,6 +400,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('selectedLanguage') || 'ko';
     setLanguage(savedLang);
 
-    // 언어 버튼 클릭 이벤트는 HTML에서 직접 setLanguage('code')로 처리.
-    // DOMContentLoaded에서는 초기 언어 설정만 처리함.
+    // 언어 버튼 클릭 이벤트
+    document.querySelectorAll('.language-selector button').forEach(button => {
+        button.addEventListener('click', () => {
+            const langCode = button.getAttribute('onclick').match(/'(.*?)'/)[1];
+            setLanguage(langCode);
+        });
+    });
 });
