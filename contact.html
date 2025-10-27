@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-translate-title="pageTitleContact">문의하기 | NEO MARITIME SERVICE</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo" aria-label="NEO MARITIME SERVICE">
+                <img src="logo.jpg" alt="NEO MARITIME SERVICE 로고">
+                NEO MARITIME SERVICE
+            </div>
+            <nav class="main-nav" aria-label="primary">
+                <ul>
+                    <li><a href="index.html" data-translate="home">홈</a></li>
+                    <li><a href="about.html" data-translate="about">회사 소개</a></li>
+                    <li><a href="services.html" data-translate="services">서비스</a></li>
+                    <li><a href="contact.html" class="active" data-translate="contact">문의하기</a></li>
+                </ul>
+            </nav>
+            <div class="language-selector">
+                <label for="languageSelect" class="sr-only">언어 선택</label>
+                <select id="languageSelect" aria-label="언어 선택">
+                    <option value="ko" selected>KR 한국어</option>
+                    <option value="en">EN English</option>
+                    <option value="es">ES Español</option>
+                    <option value="zh">ZH 中文</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero" style="background-image: url('resized_2.jpg');">
+            <div class="page-hero-content">
+                <h1 data-translate="contactHeroTitle">문의하기</h1>
+                <p data-translate="contactHeroSubtitle">귀사의 해상 운영에 필요한 모든 사항에 대해 문의해 주세요.</p>
+            </div>
+        </section>
+
+        <section id="contact-info" class="section-padded container text-center">
+            <h2 class="section-title" data-translate="contactSectionTitle">사무소 연락처 및 문의 양식</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-col office-col"> 
+                    <div class="office-details">
+                        <h3 data-translate="officeKorea">🇰🇷 한국 사무소</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 광주광역시 광산구 목련로 394번길 64</p>
+                        <p><i class="fas fa-phone"></i> Tel: +82 62 952 8085</p>
+                        <p><i class="fas fa-exclamation-triangle"></i> Emergency: +82 10 4124 6955</p>
+                        <p><i class="fas fa-envelope"></i> Email: korea@neomaritimeservice.com</p>
+                    </div>
+                </div>
+                <div class="contact-col office-col">
+                    <div class="office-details">
+                        <h3 data-translate="officePanama">🇵🇦 파나마 사무소</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Calle 63a oeste 23, Panama, Provincia de Panama</p>
+                        <p><i class="fas fa-phone"></i> Tel: +507 372 3929</p>
+                        <p><i class="fas fa-exclamation-triangle"></i> Emergency: +507 6831 6708</p>
+                        <p><i class="fas fa-envelope"></i> Email: panama@neomartime.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-col form-col" data-office="korea"> 
+                    <h3>🇰🇷 한국 문의 양식</h3>
+                    <form action="#" method="post" enctype="multipart/form-data" data-office="korea">
+                        <input type="text" name="company_vessel" data-translate-ph="phCompanyVessel" placeholder="회사 또는 선박명" required>
+                        <input type="text" name="contact_person" data-translate-ph="phContactPerson" placeholder="담당자 이름" required>
+                        <input type="email" name="email" data-translate-ph="phEmail" placeholder="이메일" required>
+                        <input type="tel" name="phone" data-translate-ph="phPhone" placeholder="전화번호" required>
+                        <textarea name="message" data-translate-ph="phMessage" placeholder="문의 내용" required></textarea>
+                        <button type="submit" data-translate-button="btnSubmitKorea">한국 사무소로 보내기</button>
+                    </form>
+                </div>
+                
+                <div class="contact-col form-col" data-office="panama"> 
+                    <h3>🇵🇦 파나마 문의 양식</h3>
+                    <form action="#" method="post" enctype="multipart/form-data" data-office="panama">
+                        <input type="text" name="company_vessel" data-translate-ph="phCompanyVessel" placeholder="회사 또는 선박명" required>
+                        <input type="text" name="contact_person" data-translate-ph="phContactPerson" placeholder="담당자 이름" required>
+                        <input type="email" name="email" data-translate-ph="phEmail" placeholder="이메일" required>
+                        <input type="tel" name="phone" data-translate-ph="phPhone" placeholder="전화번호" required>
+                        <textarea name="message" data-translate-ph="phMessage" placeholder="문의 내용" required></textarea>
+                        <button type="submit" data-translate-button="btnSubmitPanama">파나마 사무소로 보내기</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div class="contact-col map-col">
+                    <h3 data-translate="mapKorea">🇰🇷 한국 사무소 위치</h3>
+                    <iframe
+                        title="Korea Office Map"
+                        width="100%"
+                        height="320"
+                        style="border:0"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDSjZdWy_KHuM81wpxINhRHicirFJVotbg&q=광주광역시+광산구+목련로+394번길+64"
+                    ></iframe>
+                </div>
+
+                <div class="contact-col map-col">
+                    <h3 data-translate="mapPanama">🇵🇦 파나마 사무소 위치</h3>
+                    <iframe
+                        title="Panama Office Map"
+                        width="100%"
+                        height="320"
+                        style="border:0"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDSjZdWy_KHuM81wpxINhRHicirFJVotbg&q=Calle+63a+oeste+23,+Panama,+Provincia+de+Panama"
+                    ></iframe>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-offices">
+            <div class="footer-office-info">
+                <div class="logo">
+                    <img src="logo.jpg" alt="NEO MARITIME SERVICE 로고">
+                    NEO MARITIME SERVICE
+                </div>
+                <p>🇰🇷 광주광역시 광산구 목련로 394번길 64 | Tel: +82 62 952 8085 | Emergency: +82 10 4124 6955 | Email: korea@neomaritimeservice.com</p>
+                <p>🇵🇦 Calle 63a oeste 23, Panama, Provincia de Panama | Tel: +507 372 3929 | Emergency: +507 6831 6708 | Email: panama@neomartime.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 NEO MARITIME SERVICE. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
