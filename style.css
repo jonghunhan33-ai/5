@@ -66,8 +66,8 @@ header {
 }
 
 .logo {
-    height: 40px; /* 로고 높이 40px 유지 */
-    width: auto; /* 로고 너비 자동 설정 (추가) */
+    height: 40px; /* 로고 높이 40px 고정 (수정) */
+    width: auto; /* 로고 너비 자동 설정 (수정) */
     margin-right: 10px;
 }
 
@@ -191,7 +191,7 @@ section h2 {
     border-bottom: 1px solid #eee;
 }
 
-/* about.html에서 full-width-container 클래스를 제거함에 따라 border-top을 제외한 스타일 적용 */
+/* about.html에서 border-top이 제거된 .value-section에 대한 스타일 */
 .value-section {
     padding: 60px 20px; 
     background-color: #fff;

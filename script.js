@@ -67,11 +67,11 @@ const translations = {
         contact_hero_subtitle: "귀사의 해상 운영에 필요한 모든 사항에 대해 문의해 주세요.",
         contact_korea_title: "🇰🇷 한국 사무소",
         contact_panama_title: "🇵🇦 파나마 사무소",
-        contact_form_korea_inquiry: "🇰🇷 한국 문의",
-        contact_form_panama_inquiry: "🇵🇦 파나마 문의",
+        contact_form_korea_inquiry: "🇰🇷 한국 문의", // '양식' 제거됨
+        contact_form_panama_inquiry: "🇵🇦 파나마 문의", // '양식' 제거됨
         contact_label_name: "이름 또는 선명",
         contact_label_email: "이메일",
-        contact_label_phone: "연락처",
+        contact_label_phone: "연락처", // 추가됨
         contact_label_message: "문의 내용",
         contact_label_file: "첨부파일",
         contact_btn_submit: "보내기",
