@@ -25,52 +25,46 @@
             </nav>
             <div class="language-selector">
                 <label for="languageSelect" class="sr-only">언어 선택</label>
-                <select id="languageSelect">
-                    <option value="ko">🇰🇷 한국어</option>
-                    <option value="en">🇺🇸 English</option>
-                    <option value="es">🇵🇦 Español</option>
+                <select id="languageSelect" aria-label="언어 선택">
+                    <option value="ko" selected>KR 한국어</option>
+                    <option value="en">EN English</option>
+                    <option value="es">ES Español</option>
+                    <option value="zh">ZH 中文</option>
                 </select>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="page-hero" style="background-image: url('hero-services.jpg'); opacity: 0;">
-            <div class="container text-center">
-                <h1 data-translate="servicesHeroTitle">선박 보급을 위한 통합 솔루션</h1>
-                <p class="lead" data-translate="servicesHeroSubtitle">고객의 성공적인 항해를 위해 필요한 모든 것을 제공합니다.</p>
+        <section class="page-hero" style="background-image: url('resized_3.jpg');">
+            <div class="page-hero-content">
+                <h1 data-translate="services">서비스 안내</h1>
+                <p data-translate="servicesHeroDesc">한국과 파나마를 잇는 통합 솔루션을 확인해보세요.</p>
             </div>
         </section>
 
-        <!-- 3. 서비스 페이지 "우리의 서비스" (수정: 최대 컨테이너 폭 적용 및 카드 폭 100% 적용) -->
-        <section id="our-services" class="section-padded bg-light">
-            <div class="container-full-width text-center">
-                <h2 class="section-title" data-translate="ourServicesTitle">우리의 서비스</h2>
-                <p class="lead" data-translate="ourServicesLead">파나마와 한국을 잇는 독보적인 글로벌 공급망을 경험하세요.</p>
-
-                <!-- service-grid 클래스는 style.css에서 flex-wrap: wrap; 으로 설정되어 있습니다. -->
-                <div class="service-grid">
-                    <div class="service-card full-width">
-                        <i class="fas fa-utensils"></i>
-                        <h4 data-translate="serviceFoodTitle">식자재/신선식품 공급</h4>
-                        <p data-translate="serviceFoodDesc">선원들의 만족도를 높이는 다양한 신선 식자재와 풍부한 K-Food를 신속하게 조달합니다.</p>
-                    </div>
-                    <div class="service-card full-width">
-                        <i class="fas fa-tools"></i>
-                        <h4 data-translate="serviceChandlingTitle">선용품 (Chandling) 공급</h4>
-                        <p data-translate="serviceChandlingDesc">갑판, 엔진, 안전 장비 등 모든 선박 운영에 필요한 고품질 선용품을 공급합니다.</p>
-                    </div>
-                    <div class="service-card full-width">
-                        <i class="fas fa-gas-pump"></i>
-                        <h4 data-translate="serviceBunkerTitle">벙커 / 윤활유 공급</h4>
-                        <p data-translate="serviceBunkerDesc">경쟁력 있는 가격으로 고품질 연료와 윤활유를 제공합니다.</p>
-                    </div>
-                    <div class="service-card full-width">
-                        <i class="fas fa-hand-holding-usd"></i>
-                        <h4 data-translate="serviceRepairTitle">현지 조달 및 수리 용역</h4>
-                        <p data-translate="serviceRepairDesc">현지 직거래를 통한 최적의 가격과 선박 수리, 용역 서비스를 제공합니다.</p>
-                    </div>
-                    
+        <section id="main-services" class="section-padded container text-center">
+            <h2 class="section-title" data-translate="servicesTitle">주요 서비스</h2>
+            <div class="grid-container">
+                <div class="service-item">
+                    <i class="fas fa-utensils"></i>
+                    <h4 data-translate="serviceFoodTitle">식자재/신선식품 공급</h4>
+                    <p data-translate="serviceFoodDesc">선원들의 만족도를 높이는 다양한 신선 식자재와 풍부한 K-Food를 신속하게 조달합니다.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-toolbox"></i>
+                    <h4 data-translate="serviceChandlerTitle">선용품 (Chandling) 공급</h4>
+                    <p data-translate="serviceChandlerDesc">갑판, 엔진, 안전 장비 등 모든 선박 운영에 필요한 고품질 선용품을 공급합니다.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-gas-pump"></i>
+                    <h4 data-translate="serviceLubeTitle">윤활유 및 화학 제품</h4>
+                    <p data-translate="serviceLubeDesc">주요 브랜드의 벙커 및 윤활유, 청소용 화학 제품을 신속하게 조달합니다.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-wrench"></i>
+                    <h4 data-translate="serviceRepairTitle">현지 조달 및 수리 용역</h4>
+                    <p data-translate="serviceRepairDesc">양국 현지 직거래를 통한 최적의 가격과 선박 수리, 용역 서비스를 제공합니다.</p>
                 </div>
             </div>
         </section>
@@ -94,13 +88,12 @@
                     NEO MARITIME SERVICE
                 </div>
                 <p>🇰🇷 광주광역시 광산구 목련로 394번길 64 | Tel: +82 62 952 8085 | Emergency: +82 10 4124 6955 | Email: korea@neomaritimeservice.com</p>
-                <p>🇵🇦 Calle 63a oeste 23, Panama, Provincia de Panama | Tel: +507 6875 1478 | Email: panama@neomaritimeservice.com</p>
-                <p class="copyright">&copy; <span id="currentYear"></span> NEO MARITIME SERVICE. All rights reserved.</p>
+                <p>🇵🇦 Calle 63a oeste 23, Panama, Provincia de Panama | Tel: +507 372 3929 | Emergency: +507 6831 6708 | Email: panama@neomartime.com</p>
             </div>
         </div>
+        <div class="copyright">
+            © 2025 NEO MARITIME SERVICE. All rights reserved.
+        </div>
     </footer>
-    <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
 </body>
 </html>
