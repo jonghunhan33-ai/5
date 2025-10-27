@@ -93,13 +93,18 @@ document.addEventListener("DOMContentLoaded", () => {
             contactSectionTitle: "사무소 연락처 및 문의 양식",
             officeKorea: "🇰🇷 한국 사무소",
             officePanama: "🇵🇦 파나마 사무소",
+            formKoreaTitle: "🇰🇷 한국 문의 양식", // 새로 추가
+            formPanamaTitle: "🇵🇦 파나마 문의 양식", // 새로 추가
             mapKorea: "🇰🇷 한국 사무소 위치",
             mapPanama: "🇵🇦 파나마 사무소 위치",
-            phSelectOffice: "문의 대상 사무소를 선택하세요",
-            phName: "이름 또는 선명",
+            phSelectOffice: "문의 대상 사무소를 선택하세요", // (현재 사용되지 않음)
+            phCompanyVessel: "회사 또는 선박명", 
+            phContactPerson: "담당자 이름", 
             phEmail: "이메일",
+            phPhone: "전화번호", 
             phMessage: "문의 내용",
-            btnSubmit: "보내기"
+            btnSubmitKorea: "한국 사무소로 보내기", // 새로 추가
+            btnSubmitPanama: "파나마 사무소로 보내기", // 새로 추가
         },
         en: {
             // Page Titles
@@ -189,13 +194,18 @@ document.addEventListener("DOMContentLoaded", () => {
             contactSectionTitle: "Office Contact Information and Inquiry Form",
             officeKorea: "🇰🇷 Korea Office",
             officePanama: "🇵🇦 Panama Office",
+            formKoreaTitle: "🇰🇷 Korea Inquiry Form",
+            formPanamaTitle: "🇵🇦 Panama Inquiry Form",
             mapKorea: "🇰🇷 Korea Office Location",
             mapPanama: "🇵🇦 Panama Office Location",
             phSelectOffice: "Select Inquiry Office",
-            phName: "Name or Vessel Name",
+            phCompanyVessel: "Company or Vessel Name", 
+            phContactPerson: "Contact Person Name", 
             phEmail: "Email",
+            phPhone: "Phone Number", 
             phMessage: "Inquiry Details",
-            btnSubmit: "Send"
+            btnSubmitKorea: "Send to Korea Office",
+            btnSubmitPanama: "Send to Panama Office",
         },
         es: {
             // Page Titles
@@ -276,7 +286,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // CTA (services.html)
             ctaTitle: "Su Socio de Confianza para Su Próximo Viaje",
-            ctaLead: "Contáctenos ahora para obtener la solución óptima de suministro de barcos.",
+            ctaLead: "Contactenos ahora para obtener la solución óptima de suministro de barcos.",
             ctaButton: "Contáctenos",
 
             // Contact (contact.html)
@@ -285,13 +295,18 @@ document.addEventListener("DOMContentLoaded", () => {
             contactSectionTitle: "Información de Contacto de la Oficina y Formulario de Consulta",
             officeKorea: "🇰🇷 Oficina de Corea",
             officePanama: "🇵🇦 Oficina de Panamá",
+            formKoreaTitle: "🇰🇷 Formulario de Consulta de Corea",
+            formPanamaTitle: "🇵🇦 Formulario de Consulta de Panamá",
             mapKorea: "🇰🇷 Ubicación de la Oficina de Corea",
             mapPanama: "🇵🇦 Ubicación de la Oficina de Panamá",
             phSelectOffice: "Seleccionar Oficina de Consulta",
-            phName: "Nombre o Nombre del Buque",
+            phCompanyVessel: "Nombre de la Compañía o Buque", 
+            phContactPerson: "Nombre de la Persona de Contacto", 
             phEmail: "Correo Electrónico",
+            phPhone: "Número de Teléfono", 
             phMessage: "Detalles de la Consulta",
-            btnSubmit: "Enviar"
+            btnSubmitKorea: "Enviar a la Oficina de Corea",
+            btnSubmitPanama: "Enviar a la Oficina de Panamá",
         },
         zh: {
             // Page Titles
@@ -381,13 +396,18 @@ document.addEventListener("DOMContentLoaded", () => {
             contactSectionTitle: "辦公室聯繫信息和諮詢表格",
             officeKorea: "🇰🇷 韓國辦事處",
             officePanama: "🇵🇦 巴拿馬辦事處",
+            formKoreaTitle: "🇰🇷 韓國諮詢表格",
+            formPanamaTitle: "🇵🇦 巴拿馬諮詢表格",
             mapKorea: "🇰🇷 韓國辦事處位置",
             mapPanama: "🇵🇦 巴拿馬辦事處位置",
             phSelectOffice: "選擇諮詢辦事處",
-            phName: "姓名或船名",
+            phCompanyVessel: "公司或船名", 
+            phContactPerson: "聯繫人姓名", 
             phEmail: "電子郵件",
+            phPhone: "電話號碼", 
             phMessage: "諮詢詳情",
-            btnSubmit: "發送"
+            btnSubmitKorea: "發送到韓國辦事處",
+            btnSubmitPanama: "發送到巴拿馬辦事處",
         }
     };
 
@@ -413,15 +433,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // 3. 버튼 텍스트 업데이트
+        // 3. 버튼 텍스트 업데이트 (index, services 페이지의 CTA 버튼)
         document.querySelectorAll('[data-translate-button]').forEach(el => {
             const key = el.getAttribute('data-translate-button');
+            // 문의하기 버튼은 아래에서 별도로 처리하므로 스킵
+            if (el.closest('.form-col')) return; 
             if (data[key]) {
                 el.textContent = data[key];
             }
         });
 
-        // 4. Contact 페이지 전용 업데이트
+        // 4. Contact 페이지 전용 업데이트 (문의 양식 제목 및 버튼 텍스트)
         document.querySelectorAll('[data-translate-contact-office]').forEach(el => {
             const key = el.getAttribute('data-translate-contact-office');
             if (data[key]) {
@@ -429,11 +451,24 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // 5. Placeholder 업데이트
-        document.querySelector('select[name="inquiry_type"] option[disabled][selected]').textContent = data.phSelectOffice;
-        document.querySelector('input[name="name"]').placeholder = data.phName;
-        document.querySelector('input[name="email"]').placeholder = data.phEmail;
-        document.querySelector('textarea[name="message"]').placeholder = data.phMessage;
+        // 5. Placeholder 및 버튼 텍스트 업데이트 (문의 양식)
+        document.querySelectorAll('.form-col form').forEach(form => {
+            // Placeholder 업데이트
+            form.querySelector('input[name="company_vessel"]').placeholder = data.phCompanyVessel;
+            form.querySelector('input[name="contact_person"]').placeholder = data.phContactPerson;
+            form.querySelector('input[name="email"]').placeholder = data.phEmail;
+            form.querySelector('input[name="phone"]').placeholder = data.phPhone;
+            form.querySelector('textarea[name="message"]').placeholder = data.phMessage;
+
+            // 버튼 텍스트 업데이트 (사무소별 분리)
+            const office = form.getAttribute('data-office');
+            const submitButton = form.querySelector('button[type="submit"]');
+            if (office === 'korea') {
+                submitButton.textContent = data.btnSubmitKorea;
+            } else if (office === 'panama') {
+                submitButton.textContent = data.btnSubmitPanama;
+            }
+        });
     };
 
     // 초기 로드 시 저장된 언어 또는 기본값 (한국어) 적용

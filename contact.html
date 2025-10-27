@@ -45,8 +45,9 @@
 
         <section id="contact-info" class="section-padded container text-center">
             <h2 class="section-title" data-translate-contact-office="contactSectionTitle">사무소 연락처 및 문의 양식</h2>
+            
             <div class="contact-grid">
-                <div class="contact-col">
+                <div class="contact-col office-col"> 
                     <div class="office-details">
                         <h3 data-translate-contact-office="officeKorea">🇰🇷 한국 사무소</h3>
                         <p><i class="fas fa-map-marker-alt"></i> 광주광역시 광산구 목련로 394번길 64</p>
@@ -54,6 +55,8 @@
                         <p><i class="fas fa-exclamation-triangle"></i> Emergency: +82 10 4124 6955</p>
                         <p><i class="fas fa-envelope"></i> Email: korea@neomaritimeservice.com</p>
                     </div>
+                </div>
+                <div class="contact-col office-col">
                     <div class="office-details">
                         <h3 data-translate-contact-office="officePanama">🇵🇦 파나마 사무소</h3>
                         <p><i class="fas fa-map-marker-alt"></i> Calle 63a oeste 23, Panama, Provincia de Panama</p>
@@ -63,22 +66,33 @@
                     </div>
                 </div>
 
-                <div class="contact-col form-section">
-                    <form action="#" method="post" enctype="multipart/form-data">
-                        <select name="inquiry_type" required>
-                            <option value="" disabled selected data-translate-placeholder="phSelectOffice">문의 대상 사무소를 선택하세요</option>
-                            <option value="korea">🇰🇷 한국 문의</option>
-                            <option value="panama">🇵🇦 파나마 문의</option>
-                        </select>
-                        <input type="text" name="name" placeholder="이름 또는 선명" required data-translate-placeholder="phName" />
+                <div class="contact-col form-col" id="korea-form-section">
+                    <h3 data-translate-contact-office="formKoreaTitle">🇰🇷 한국 문의 양식</h3>
+                    <form action="#" method="post" enctype="multipart/form-data" data-office="korea">
+                        <input type="text" name="company_vessel" placeholder="회사 또는 선박명" required data-translate-placeholder="phCompanyVessel" />
+                        <input type="text" name="contact_person" placeholder="담당자 이름" required data-translate-placeholder="phContactPerson" />
                         <input type="email" name="email" placeholder="이메일" required data-translate-placeholder="phEmail" />
+                        <input type="tel" name="phone" placeholder="전화번호" required data-translate-placeholder="phPhone" />
                         <textarea name="message" placeholder="문의 내용" required data-translate-placeholder="phMessage"></textarea>
                         <input type="file" name="attachment" />
-                        <button type="submit" data-translate-button="btnSubmit">보내기</button>
+                        <button type="submit" data-translate-button="btnSubmit">한국 사무소로 보내기</button>
                     </form>
                 </div>
 
-                <div class="map-col">
+                <div class="contact-col form-col" id="panama-form-section">
+                    <h3 data-translate-contact-office="formPanamaTitle">🇵🇦 파나마 문의 양식</h3>
+                    <form action="#" method="post" enctype="multipart/form-data" data-office="panama">
+                        <input type="text" name="company_vessel" placeholder="회사 또는 선박명" required data-translate-placeholder="phCompanyVessel" />
+                        <input type="text" name="contact_person" placeholder="담당자 이름" required data-translate-placeholder="phContactPerson" />
+                        <input type="email" name="email" placeholder="이메일" required data-translate-placeholder="phEmail" />
+                        <input type="tel" name="phone" placeholder="전화번호" required data-translate-placeholder="phPhone" />
+                        <textarea name="message" placeholder="문의 내용" required data-translate-placeholder="phMessage"></textarea>
+                        <input type="file" name="attachment" />
+                        <button type="submit" data-translate-button="btnSubmit">파나마 사무소로 보내기</button>
+                    </form>
+                </div>
+
+                <div class="contact-col map-col">
                     <h3 data-translate-contact-office="mapKorea">🇰🇷 한국 사무소 위치</h3>
                     <iframe
                         title="Korea Office Map"
@@ -91,7 +105,7 @@
                         src="https://www.google.com/maps/embed/v1/place?q=%EA%B4%91%EC%A3%BC%EA%B4%91%EC%97%AD%EC%8B%9C%20%EA%B4%91%EC%82%B0%EA%B5%AC%20%EB%AA%A9%EB%A0%A8%EB%A1%9C%20394%EB%B2%88%EA%B8%B8%2064&key=YOUR_API_KEY"
                     ></iframe>
                 </div>
-                <div class="map-col">
+                <div class="contact-col map-col">
                     <h3 data-translate-contact-office="mapPanama">🇵🇦 파나마 사무소 위치</h3>
                     <iframe
                         title="Panama Office Map"
@@ -104,6 +118,7 @@
                         src="https://www.google.com/maps/embed/v1/place?q=Calle+63a+oeste+23,+Panama,+Provincia+de+Panama&key=YOUR_API_KEY"
                     ></iframe>
                 </div>
+
                 <p style="font-size: 14px; margin-top: 10px; width: 100%;">* 지도 표시에 Google Maps API Key가 필요합니다. 'YOUR_API_KEY' 부분을 교체해야 정상 작동합니다.</p>
             </div>
         </section>
