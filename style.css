@@ -67,6 +67,11 @@ header {
 
 .logo {
     height: 40px;
+    /* FIX 1: 로고 이미지 크기 및 정렬 수정 */
+    width: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    /* FIX 1: 끝 */
     margin-right: 10px;
 }
 
@@ -156,9 +161,9 @@ nav ul li a:hover, nav ul li a.active {
 
 /* 개별 히어로 배경 설정 (JS에서 동적 배경 설정을 위해 ID 사용) */
 #home-hero { background-image: url('resized_1.jpg'); } /* JS가 실행되기 전 기본값 */
-#about-hero { background-image: url('resized_1.jpg'); } /*  */
-#services-hero { background-image: url('resized_2.jpg'); } /*  */
-#contact-hero { background-image: url('resized_3.jpg'); } /*  */
+#about-hero { background-image: url('resized_1.jpg'); } /* */
+#services-hero { background-image: url('resized_2.jpg'); } /* */
+#contact-hero { background-image: url('resized_3.jpg'); } /* */
 
 
 /* 섹션 공통 스타일 */
@@ -243,12 +248,19 @@ section h2 {
 }
 
 .ceo-photo {
-    width: 150px;
-    height: 150px;
+    /* FIX 2: CEO 사진 크기 250px로 확대 및 스타일 수정 */
+    width: 100%; 
+    max-width: 250px;
+    height: 250px;
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 15px;
     border: 3px solid #004d99;
+    /* 중앙 정렬을 위한 설정 */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    /* FIX 2: 끝 */
 }
 
 .ceo-card h3 {
