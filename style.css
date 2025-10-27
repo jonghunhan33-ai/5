@@ -67,11 +67,9 @@ header {
 
 .logo {
     height: 40px;
-    /* FIX 1: 로고 이미지 크기 및 정렬 수정 */
     width: auto;
-    max-width: 100%;
+    max-width: 100%; /* 사진이 영역을 넘지 않도록 수정 */
     vertical-align: middle;
-    /* FIX 1: 끝 */
     margin-right: 10px;
 }
 
@@ -248,19 +246,16 @@ section h2 {
 }
 
 .ceo-photo {
-    /* FIX 2: CEO 사진 크기 250px로 확대 및 스타일 수정 */
     width: 100%; 
-    max-width: 250px;
+    max-width: 250px; /* 사진이 영역을 넘지 않도록 수정 */
     height: 250px;
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 15px;
     border: 3px solid #004d99;
-    /* 중앙 정렬을 위한 설정 */
     margin-left: auto;
     margin-right: auto;
     display: block;
-    /* FIX 2: 끝 */
 }
 
 .ceo-card h3 {
@@ -461,6 +456,7 @@ footer {
     }
 
     .promise-list, .mission-list, .value-list, .services-list {
+        flex-direction: column;
         gap: 20px;
     }
 
