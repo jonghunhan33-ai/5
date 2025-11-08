@@ -1,102 +1,612 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEO MARITIME SERVICE - 서비스</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <div class="header-container">
-            <div class="logo-area">
-                <img src="logo.jpg" alt="NEO MARITIME SERVICE Logo" class="logo">
-                <span class="company-name">NEO MARITIME SERVICE</span>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" data-translate-key="menu_home">홈</a></li>
-                    <li><a href="about.html" data-translate-key="menu_about">회사소개</a></li>
-                    <li><a href="services.html" class="active" data-translate-key="menu_services">서비스</a></li>
-                    <li><a href="contact.html" data-translate-key="menu_contact">문의하기</a></li>
-                </ul>
-            </nav>
-            <div class="language-selector">
-                <button onclick="setLanguage('ko')">KR 한국어</button>
-                <button onclick="setLanguage('en')">EN ENGLISH</button>
-                <button onclick="setLanguage('es')">ES ESPANOL</button>
-                <button onclick="setLanguage('zh')">ZH 中文</button>
-            </div>
-        </div>
-    </header>
+/* 글로벌 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+    /* 사용자 요청: 단어가 깨지지 않게 줄바꿈 처리 */
+    word-break: keep-all; /* CJK 텍스트에서 단어 단위로 줄바꿈을 유지 */
+    overflow-wrap: break-word; /* 너무 긴 단어(예: URL, 이메일)가 넘칠 경우에만 줄바꿈 허용 */
+}
 
-    <main>
-        <section class="hero-section services-hero">
-            <h1 data-translate-key="services_hero_title">NEO MARITIME SERVICE의 서비스</h1>
-            <p data-translate-key="services_hero_subtitle">선박 운영에 필요한 모든 것을 ONE-STOP으로 제공합니다.</p>
-        </section>
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        <section class="services-list-section container">
-            <div class="service-item">
-                <h3 data-translate-key="services_general_title">일반 선용품 및 식료품 공급</h3>
-                <ul>
-                    <li data-translate-key="services_general_p1">선용품 (Store) / 선박 소모품 (General Consumables)</li>
-                    <li data-translate-key="services_general_p2">공구 및 철물 (Tools & Hardware) / 안전 장비 및 소방 설비 (Safety Equipment)</li>
-                </ul>
-            </div>
-            <div class="service-item">
-                <h3 data-translate-key="services_provision_title">선원 식료품 (Provision)</h3>
-                <ul>
-                    <li data-translate-key="services_provision_p1">신선한 식료품 및 주류/음료 공급</li>
-                    <li data-translate-key="services_provision_p2">선원의 국적 및 요구 사항에 맞춘 맞춤형 식자재 제공</li>
-                </ul>
-            </div>
-            <div class="service-item">
-                <h3 data-translate-key="services_technical_title">기술 장비 및 부품 공급</h3>
-                <ul>
-                    <li data-translate-key="services_technical_p1">엔진 및 발전기 부품 (Engine & Generator Parts) / 펌프 및 밸브 (Pumps & Valves)</li>
-                    <li data-translate-key="services_technical_p2">전기 및 전자 장비 (Electrical & Electronic Equipment) / 항해 장비 (Navigation Equipment)</li>
-                </ul>
-            </div>
-            <div class="service-item">
-                <h3 data-translate-key="services_others_title">기타 서비스</h3>
-                <ul>
-                    <li data-translate-key="services_others_p1">선박 수리 및 정비 지원 (Repair & Maintenance)</li>
-                    <li data-translate-key="services_others_p2">통관 및 물류 서비스 (Customs & Logistics)</li>
-                </ul>
-            </div>
-        </section>
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
 
-        <section class="contact-section">
-            <h2 data-translate-key="services_contact_h2">당신의 다음 항해를 위한 신뢰할 수 있는 파트너</h2>
-            <p data-translate-key="services_contact_p">지금 바로 문의하여 최적의 선박 보급 솔루션을 받아보세요. </p>
-            <a href="contact.html" class="button primary" data-translate-key="btn_contact">문의하기</a>
-        </section>
-    </main>
+.primary {
+    background-color: #004d99; /* 네이비 블루 */
+    color: white;
+}
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-logo">
-                <img src="logo.jpg" alt="NEO MARITIME SERVICE Logo" class="logo">
-                <p>NEO MARITIME SERVICE</p>
-            </div>
-            <div class="contact-info">
-                <h3 data-translate-key="footer_korea_h3">🇰🇷 한국 사무소</h3>
-                <p>광주광역시 광산구 목련로 394번길 64</p>
-                <p>Tel: +82 62 952 8085</p>
-                <p>Emergency: +82 10 4124 6955</p>
-                <p>Email: korea@neomaritimeservice.com</p>
-            </div>
-            <div class="contact-info">
-                <h3 data-translate-key="footer_panama_h3">🇵🇦 파나마 사무소</h3>
-                <p>Calle 63a oeste 23, PH Altabrisa, Piso 1, Oficina 104, Panama City, Panama</p>
-                <p>Tel: +507 392-5666</p>
-                <p>Emergency: +507 6378 0588</p>
-                <p>Email: panama@neomaritimeservice.com</p> </div>
-        </div>
-        <p class="copyright" data-translate-key="footer_copyright">© 2025 NEO MARITIME SERVICE. All rights reserved.</p>
-    </footer>
+.primary:hover {
+    background-color: #003366;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.secondary {
+    background-color: #f9f9f9;
+    color: #004d99;
+    border: 1px solid #004d99;
+}
+
+.secondary:hover {
+    background-color: #e0e0e0;
+}
+
+/* 헤더/내비게이션 스타일 */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    /* 로고 크기 수정: 30px에서 40px로 키워서 해상도를 개선하거나 명확히 제어 */
+    height: 40px; 
+    margin-right: 10px;
+    width: auto; /* 비율 유지를 위해 추가 */
+}
+
+.company-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #004d99;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s;
+    position: relative;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #004d99;
+}
+
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #004d99;
+}
+
+/* 언어 선택기 */
+.language-selector button {
+    background: none;
+    border: 1px solid #ccc;
+    color: #555;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.language-selector button:hover {
+    background-color: #f0f0f0;
+}
+
+.language-selector button.active {
+    background-color: #004d99;
+    color: white;
+    border-color: #004d99;
+}
+
+
+/* 메인 콘텐츠 레이아웃 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    padding: 60px 0;
+}
+
+h1, h2, h3 {
+    color: #004d99;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 히어로 섹션 */
+.hero-section {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 0 20px;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* 어두운 오버레이 */
+}
+
+.hero-section * {
+    z-index: 1;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    max-width: 800px;
+}
+
+/* Home Page Specific Styles */
+
+#home-hero {
+    /* Background images are set by script.js */
+    background-image: url('resized_1.jpg'); /* Fallback/Initial */
+    transition: background-image 1s ease-in-out;
+}
+
+.promise-section {
+    background-color: white;
+    text-align: center;
+}
+
+.promise-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.promise-card {
+    flex: 1;
+    min-width: 250px;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: box-shadow 0.3s;
+}
+
+.promise-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.promise-card h3 {
+    color: #004d99;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.promise-card p {
+    /* 줄바꿈 설정 추가 */
+    word-break: keep-all; 
+    overflow-wrap: break-word;
+}
+
+.whyus-section {
+    background-color: #f0f5f9;
+    text-align: center;
+}
+
+.whyus-section p {
+    max-width: 800px;
+    margin: 15px auto;
+    line-height: 1.6;
+}
+
+/* Services Page Specific Styles */
+.services-hero {
+    background-image: url('resized_4.jpg');
+}
+
+.services-list-section {
+    background-color: white;
+}
+
+.service-item {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.service-item h3 {
+    text-align: left;
+    border-left: 5px solid #004d99;
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+
+.service-item ul {
+    list-style: disc;
+    padding-left: 40px;
+}
+
+.service-item li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* About Page Specific Styles */
+.about-hero {
+    background-image: url('resized_5.jpg');
+}
+
+.about-intro-section,
+.about-mission-section,
+.about-ceo-section {
+    background-color: white;
+    padding: 40px 20px;
+}
+
+.about-intro-section h2,
+.about-mission-section h2,
+.about-ceo-section h2 {
+    text-align: left;
+    border-bottom: 2px solid #004d99;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.about-intro-section p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-mission-section {
+    background-color: #f0f5f9;
+}
+
+.about-mission-section h2 {
+    border-color: #333;
+}
+
+.about-mission-section p {
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+.ceo-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.ceo-card {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.ceo-card h3 {
+    color: #333;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.ceo-card p {
+    line-height: 1.6;
+}
+
+.ceo-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #004d99;
+}
+
+
+/* Contact Page Specific Styles */
+.contact-hero {
+    background-image: url('resized_6.jpg');
+}
+
+.contact-info-section {
+    background-color: white;
+}
+
+.contact-offices {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.office-block {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.office-block h2 {
+    text-align: left;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.office-block p {
+    margin: 10px 0;
+}
+
+.office-block strong {
+    font-weight: bold;
+}
+
+.contact-form-section {
+    background-color: #f0f5f9;
+    padding-bottom: 80px;
+}
+
+.contact-form-section h2 {
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-form .button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+}
+
+.map-container {
+    height: 300px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
+/* CTA Section (Used on Services, About) */
+.contact-section {
+    background-color: #004d99;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.contact-section h2 {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.contact-section p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.contact-section .button {
+    background-color: white;
+    color: #004d99;
+    font-weight: bold;
+}
+
+.contact-section .button:hover {
+    background-color: #f0f0f0;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 40px 20px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333;
+    text-align: left;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #ccc;
+}
+
+.footer-logo img {
+    /* 푸터 로고 크기 수정: 30px에서 40px로 키워서 잘 보이게 함 */
+    height: 40px;
+    width: auto; /* 비율 유지를 위해 추가 */
+    filter: invert(100%);
+}
+
+.footer-logo p {
+    font-weight: bold;
+    color: white;
+}
+
+.contact-info h3 {
+    color: #fff;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    color: #999;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 900px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin: 15px 0;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo,
+    .contact-info {
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .contact-info h3 {
+        text-align: center;
+    }
+
+    .promise-cards {
+        flex-direction: column;
+    }
+
+    .office-block {
+        min-width: 100%;
+    }
+
+    .contact-offices {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-section h1 {
+        font-size: 2em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .language-selector {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .language-selector button {
+        margin: 5px;
+    }
+}
