@@ -1,507 +1,102 @@
-/* 글로벌 스타일 */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #f4f4f4;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.primary {
-    background-color: #004d99; /* 네이비 블루 */
-    color: white;
-}
-
-.primary:hover {
-    background-color: #003366;
-}
-
-.secondary {
-    background-color: #f9f9f9;
-    color: #004d99;
-    border: 1px solid #004d99;
-}
-
-.secondary:hover {
-    background-color: #e0e0e0;
-}
-
-/* 헤더/내비게이션 스타일 */
-header {
-    background-color: #ffffff;
-    border-bottom: 1px solid #ddd;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-.logo-area {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    height: 40px !important; /* 로고 높이 40px 고정 (!important 적용) */
-    width: auto; /* 로고 너비 자동 설정 */
-    margin-right: 10px;
-}
-
-.company-name {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #004d99;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: #333;
-    font-weight: 500;
-    padding: 5px 0;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover, nav ul li a.active {
-    color: #004d99;
-    border-bottom: 2px solid #004d99;
-}
-
-.language-selector button {
-    background: none;
-    border: 1px solid #ccc;
-    color: #555;
-    padding: 5px 10px;
-    margin-left: 5px;
-    font-size: 0.8em;
-    cursor: pointer;
-}
-
-.language-selector button:hover {
-    background-color: #eee;
-}
-
-/* 언어 선택 버튼 활성화 상태 */
-.language-selector button.active-lang {
-    background-color: #004d99; /* 네이비 블루 */
-    color: white;
-    border-color: #004d99;
-    font-weight: bold;
-}
-
-
-/* 히어로 섹션 (상단 배경) */
-.hero-section {
-    position: relative;
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    padding: 0 20px;
-}
-
-.hero-content h1 {
-    font-size: 3em;
-    margin-bottom: 15px;
-}
-
-.hero-content p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
-/* 개별 히어로 배경 설정 (JS에서 동적 배경 설정을 위해 ID 사용) */
-#home-hero { background-image: url('resized_1.jpg'); } /* JS가 실행되기 전 기본값 */
-#about-hero { background-image: url('resized_1.jpg'); } /* */
-#services-hero { background-image: url('resized_2.jpg'); } /* */
-#contact-hero { background-image: url('resized_3.jpg'); } /* */
-
-
-/* 섹션 공통 스타일 */
-section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-section h2 {
-    font-size: 2em;
-    color: #004d99;
-    margin-bottom: 40px;
-}
-
-/* 컨테이너 폭 최대, 세로 배치 요소 스타일 */
-.full-width-container {
-    padding: 60px 0;
-    background-color: #fff;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-}
-
-/* about.html에서 border-top이 제거된 .value-section에 대한 스타일 */
-.value-section {
-    padding: 60px 20px; 
-    background-color: #fff;
-    border-bottom: 1px solid #eee; 
-}
-
-.full-width-container h2 {
-    max-width: 1200px;
-    margin: 0 auto 40px;
-    padding: 0 20px;
-}
-
-.promise-list, .mission-list, .value-list, .services-list {
-    display: flex;
-    flex-direction: column; /* 세로 배치  */
-    max-width: 1200px; /* 컨테이너의 폭은 홈페이지 최대 폭으로  */
-    margin: 0 auto;
-    padding: 0 20px;
-    gap: 30px;
-}
-
-.promise-item, .mission-item, .value-item, .service-item {
-    background-color: #f9f9f9;
-    padding: 30px;
-    border-radius: 8px;
-    text-align: left;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.promise-item .icon, .mission-item .icon, .value-item .icon, .service-item .icon {
-    font-size: 2em;
-    margin-bottom: 15px;
-}
-
-.promise-item h3, .mission-item h3, .value-item h3, .service-item h3 {
-    color: #004d99;
-    margin-top: 0;
-}
-
-/* 회사소개 - 경영진 섹션 */
-.management-section {
-    background-color: #f4f4f4;
-}
-
-.management-section .subtitle {
-    font-size: 1.1em;
-    margin-bottom: 40px;
-    color: #555;
-}
-
-.ceo-profiles {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    max-width: 1000px;
-    margin: 0 auto 40px;
-}
-
-.ceo-card {
-    flex: 1;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 450px;
-}
-
-.ceo-photo {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    border: 3px solid #004d99;
-}
-
-.ceo-card h3 {
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.ceo-card .role {
-    color: #004d99;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.why-us-section, .contact-prompt-section {
-    padding: 80px 20px;
-}
-
-/* ------------------------------------------- */
-/* 문의하기 페이지 새로운 레이아웃 (요청 사항 반영) */
-/* ------------------------------------------- */
-
-.contact-details-form-section {
-    max-width: 1200px;
-    margin: 0 auto 40px;
-    padding: 0 20px;
-}
-
-/* 메인 2열 컨테이너 */
-.office-blocks-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    margin-top: 40px;
-}
-
-.office-block {
-    flex: 1;
-    min-width: 45%; /* 최소 폭 설정 */
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
-
-.office-info {
-    text-align: left;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    margin-bottom: 20px;
-}
-
-.office-info h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 1.8em;
-    color: #004d99;
-    text-align: left;
-}
-
-.office-info p {
-    text-align: left;
-    margin: 10px 0;
-}
-
-/* 문의 양식 스타일 */
-.contact-form {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    margin-bottom: 20px;
-    text-align: left; /* 폼 요소 왼쪽 정렬 */
-}
-
-.contact-form fieldset {
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-.contact-form legend {
-    font-size: 1.2em;
-    color: #004d99;
-    font-weight: bold;
-    padding: 0 10px;
-}
-
-.contact-form label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form input[type="tel"],
-.contact-form textarea,
-.contact-form input[type="file"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-}
-
-.contact-form input[type="file"] {
-    border: none;
-    padding-left: 0;
-}
-
-.contact-form textarea {
-    resize: vertical;
-}
-
-.contact-form button[type="submit"] {
-    width: 100%;
-    background-color: #004d99;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-}
-
-.contact-form button[type="submit"]:hover {
-    background-color: #003366;
-}
-
-/* 지도 프레임 스타일 */
-.map-frame {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    flex-grow: 1; /* 남은 공간을 채우도록 성장 */
-}
-
-.map-frame h2 {
-    margin-top: 0;
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-/* 푸터 스타일 */
-footer {
-    background-color: #1a1a1a;
-    color: white;
-    padding: 40px 20px 20px;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #333;
-    text-align: left;
-}
-
-.footer-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    color: #ccc;
-}
-
-.footer-logo img {
-    height: 30px;
-    filter: invert(100%);
-}
-
-.footer-logo p {
-    font-weight: bold;
-    color: white;
-}
-
-.contact-info h3 {
-    color: #fff;
-    font-size: 1.1em;
-    margin-bottom: 10px;
-}
-
-.contact-info p {
-    margin: 5px 0;
-}
-
-.copyright {
-    text-align: center;
-    margin-top: 20px;
-    color: #999;
-}
-
-/* 반응형 디자인 */
-@media (max-width: 900px) {
-    .header-container {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    nav {
-        order: 3;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    nav ul {
-        justify-content: center;
-    }
-    
-    .language-selector {
-        order: 2;
-    }
-
-    .promise-list, .mission-list, .value-list, .services-list {
-        gap: 20px;
-    }
-    
-    /* 문의하기 페이지 모바일 레이아웃 */
-    .office-blocks-container {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .ceo-profiles {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEO MARITIME SERVICE - 서비스</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="logo.jpg" alt="NEO MARITIME SERVICE Logo" class="logo">
+                <span class="company-name">NEO MARITIME SERVICE</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" data-translate-key="menu_home">홈</a></li>
+                    <li><a href="about.html" data-translate-key="menu_about">회사소개</a></li>
+                    <li><a href="services.html" class="active" data-translate-key="menu_services">서비스</a></li>
+                    <li><a href="contact.html" data-translate-key="menu_contact">문의하기</a></li>
+                </ul>
+            </nav>
+            <div class="language-selector">
+                <button onclick="setLanguage('ko')">KR 한국어</button>
+                <button onclick="setLanguage('en')">EN ENGLISH</button>
+                <button onclick="setLanguage('es')">ES ESPANOL</button>
+                <button onclick="setLanguage('zh')">ZH 中文</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section services-hero">
+            <h1 data-translate-key="services_hero_title">NEO MARITIME SERVICE의 서비스</h1>
+            <p data-translate-key="services_hero_subtitle">선박 운영에 필요한 모든 것을 ONE-STOP으로 제공합니다.</p>
+        </section>
+
+        <section class="services-list-section container">
+            <div class="service-item">
+                <h3 data-translate-key="services_general_title">일반 선용품 및 식료품 공급</h3>
+                <ul>
+                    <li data-translate-key="services_general_p1">선용품 (Store) / 선박 소모품 (General Consumables)</li>
+                    <li data-translate-key="services_general_p2">공구 및 철물 (Tools & Hardware) / 안전 장비 및 소방 설비 (Safety Equipment)</li>
+                </ul>
+            </div>
+            <div class="service-item">
+                <h3 data-translate-key="services_provision_title">선원 식료품 (Provision)</h3>
+                <ul>
+                    <li data-translate-key="services_provision_p1">신선한 식료품 및 주류/음료 공급</li>
+                    <li data-translate-key="services_provision_p2">선원의 국적 및 요구 사항에 맞춘 맞춤형 식자재 제공</li>
+                </ul>
+            </div>
+            <div class="service-item">
+                <h3 data-translate-key="services_technical_title">기술 장비 및 부품 공급</h3>
+                <ul>
+                    <li data-translate-key="services_technical_p1">엔진 및 발전기 부품 (Engine & Generator Parts) / 펌프 및 밸브 (Pumps & Valves)</li>
+                    <li data-translate-key="services_technical_p2">전기 및 전자 장비 (Electrical & Electronic Equipment) / 항해 장비 (Navigation Equipment)</li>
+                </ul>
+            </div>
+            <div class="service-item">
+                <h3 data-translate-key="services_others_title">기타 서비스</h3>
+                <ul>
+                    <li data-translate-key="services_others_p1">선박 수리 및 정비 지원 (Repair & Maintenance)</li>
+                    <li data-translate-key="services_others_p2">통관 및 물류 서비스 (Customs & Logistics)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2 data-translate-key="services_contact_h2">당신의 다음 항해를 위한 신뢰할 수 있는 파트너</h2>
+            <p data-translate-key="services_contact_p">지금 바로 문의하여 최적의 선박 보급 솔루션을 받아보세요. </p>
+            <a href="contact.html" class="button primary" data-translate-key="btn_contact">문의하기</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="logo.jpg" alt="NEO MARITIME SERVICE Logo" class="logo">
+                <p>NEO MARITIME SERVICE</p>
+            </div>
+            <div class="contact-info">
+                <h3 data-translate-key="footer_korea_h3">🇰🇷 한국 사무소</h3>
+                <p>광주광역시 광산구 목련로 394번길 64</p>
+                <p>Tel: +82 62 952 8085</p>
+                <p>Emergency: +82 10 4124 6955</p>
+                <p>Email: korea@neomaritimeservice.com</p>
+            </div>
+            <div class="contact-info">
+                <h3 data-translate-key="footer_panama_h3">🇵🇦 파나마 사무소</h3>
+                <p>Calle 63a oeste 23, PH Altabrisa, Piso 1, Oficina 104, Panama City, Panama</p>
+                <p>Tel: +507 392-5666</p>
+                <p>Emergency: +507 6378 0588</p>
+                <p>Email: panama@neomaritimeservice.com</p> </div>
+        </div>
+        <p class="copyright" data-translate-key="footer_copyright">© 2025 NEO MARITIME SERVICE. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
