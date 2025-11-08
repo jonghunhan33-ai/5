@@ -66,8 +66,8 @@ header {
 }
 
 .logo {
-    height: 40px; /* 로고 높이 40px 고정 (수정) */
-    width: auto; /* 로고 너비 자동 설정 (수정) */
+    height: 40px !important; /* 로고 높이 40px 고정 (!important 적용) */
+    width: auto; /* 로고 너비 자동 설정 */
     margin-right: 10px;
 }
 
