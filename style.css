@@ -69,10 +69,11 @@ header {
 }
 
 .logo {
-    /* 로고 크기 수정: 30px에서 40px로 키워서 해상도를 개선하거나 명확히 제어 */
+    /* ⚠️ 헤더 로고 크기 수정: 높이를 40px로 제한하고, 너비는 비율에 맞게 자동으로 설정 */
     height: 40px; 
+    width: auto; /* 비율 유지를 위해 width: auto로 설정 */
+    object-fit: contain; /* 이미지가 잘리거나 늘어나지 않고 컨테이너 안에 맞도록 설정 */
     margin-right: 10px;
-    width: auto; /* 비율 유지를 위해 추가 */
 }
 
 .company-name {
@@ -515,9 +516,10 @@ footer {
 }
 
 .footer-logo img {
-    /* 푸터 로고 크기 수정: 30px에서 40px로 키워서 잘 보이게 함 */
+    /* ⚠️ 푸터 로고 크기 수정: 높이를 40px로 제한하고, 너비는 비율에 맞게 자동으로 설정 */
     height: 40px;
-    width: auto; /* 비율 유지를 위해 추가 */
+    width: auto; /* 비율 유지를 위해 width: auto로 설정 */
+    object-fit: contain;
     filter: invert(100%);
 }
 
