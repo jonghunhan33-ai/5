@@ -5,10 +5,13 @@ body {
     padding: 0;
     color: #333;
     background-color: #f4f4f4;
-    /* 사용자 요청: 단어가 깨지지 않게 줄바꿈 처리 */
-    word-break: keep-all; /* CJK 텍스트에서 단어 단위로 줄바꿈을 유지 */
-    overflow-wrap: break-word; /* 너무 긴 단어(예: URL, 이메일)가 넘칠 경우에만 줄바꿈 허용 */
 }
+/* 단어가 자동 줄바꿈될 때 중간에서 끊기지 않도록 설정 */
+body, p, h1, h2, h3, h4, h5, h6, a, li, span, div {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
 
 a {
     text-decoration: none;
@@ -57,10 +60,10 @@ header {
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
 }
 
 .logo-area {
@@ -69,10 +72,8 @@ header {
 }
 
 .logo {
-    /* ⚠️ 헤더 로고 크기 수정: 높이를 40px로 제한하고, 너비는 비율에 맞게 자동으로 설정 */
-    height: 40px; 
-    width: auto; /* 비율 유지를 위해 width: auto로 설정 */
-    object-fit: contain; /* 이미지가 잘리거나 늘어나지 않고 컨테이너 안에 맞도록 설정 */
+    height: 40px !important; /* 로고 높이 40px 고정 (!important 적용) */
+    width: auto; /* 로고 너비 자동 설정 */
     margin-right: 10px;
 }
 
@@ -94,80 +95,52 @@ nav ul li {
 }
 
 nav ul li a {
+    color: #333;
     font-weight: 500;
     padding: 5px 0;
     transition: color 0.3s;
-    position: relative;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
+nav ul li a:hover, nav ul li a.active {
     color: #004d99;
+    border-bottom: 2px solid #004d99;
 }
 
-nav ul li a.active::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 100%;
-    height: 2px;
-    background-color: #004d99;
-}
-
-/* 언어 선택기 */
 .language-selector button {
     background: none;
     border: 1px solid #ccc;
     color: #555;
     padding: 5px 10px;
     margin-left: 5px;
+    font-size: 0.8em;
     cursor: pointer;
-    border-radius: 3px;
-    transition: background-color 0.3s, color 0.3s;
 }
 
 .language-selector button:hover {
-    background-color: #f0f0f0;
+    background-color: #eee;
 }
 
-.language-selector button.active {
-    background-color: #004d99;
+/* 언어 선택 버튼 활성화 상태 */
+.language-selector button.active-lang {
+    background-color: #004d99; /* 네이비 블루 */
     color: white;
     border-color: #004d99;
+    font-weight: bold;
 }
 
 
-/* 메인 콘텐츠 레이아웃 */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-section {
-    padding: 60px 0;
-}
-
-h1, h2, h3 {
-    color: #004d99;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* 히어로 섹션 */
+/* 히어로 섹션 (상단 배경) */
 .hero-section {
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
+    position: relative;
+    height: 400px;
     background-size: cover;
     background-position: center;
-    position: relative;
-    padding: 0 20px;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .hero-section::before {
@@ -177,317 +150,277 @@ h1, h2, h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* 어두운 오버레이 */
-}
-
-.hero-section * {
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
-.hero-section h1 {
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
     font-size: 3em;
-    margin-bottom: 10px;
-    color: white;
+    margin-bottom: 15px;
 }
 
-.hero-section p {
+.hero-content p {
     font-size: 1.2em;
-    max-width: 800px;
+    margin-bottom: 30px;
 }
 
-/* Home Page Specific Styles */
+/* 개별 히어로 배경 설정 (JS에서 동적 배경 설정을 위해 ID 사용) */
+#home-hero { background-image: url('resized_1.jpg'); } /* JS가 실행되기 전 기본값 */
+#about-hero { background-image: url('resized_1.jpg'); } /* */
+#services-hero { background-image: url('resized_2.jpg'); } /* */
+#contact-hero { background-image: url('resized_3.jpg'); } /* */
 
-#home-hero {
-    /* Background images are set by script.js */
-    background-image: url('resized_1.jpg'); /* Fallback/Initial */
-    transition: background-image 1s ease-in-out;
-}
 
-.promise-section {
-    background-color: white;
+/* 섹션 공통 스타일 */
+section {
+    padding: 60px 20px;
     text-align: center;
 }
 
-.promise-cards {
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    margin-top: 40px;
-    flex-wrap: wrap;
-}
-
-.promise-card {
-    flex: 1;
-    min-width: 250px;
-    padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    transition: box-shadow 0.3s;
-}
-
-.promise-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.promise-card h3 {
+section h2 {
+    font-size: 2em;
     color: #004d99;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.promise-card p {
-    /* 줄바꿈 설정 추가 */
-    word-break: keep-all; 
-    overflow-wrap: break-word;
-}
-
-.whyus-section {
-    background-color: #f0f5f9;
-    text-align: center;
-}
-
-.whyus-section p {
-    max-width: 800px;
-    margin: 15px auto;
-    line-height: 1.6;
-}
-
-/* Services Page Specific Styles */
-.services-hero {
-    background-image: url('resized_4.jpg');
-}
-
-.services-list-section {
-    background-color: white;
-}
-
-.service-item {
     margin-bottom: 40px;
-    padding: 20px;
+}
+
+/* 컨테이너 폭 최대, 세로 배치 요소 스타일 */
+.full-width-container {
+    padding: 60px 0;
+    background-color: #fff;
+    border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
 }
 
-.service-item h3 {
-    text-align: left;
-    border-left: 5px solid #004d99;
-    padding-left: 15px;
-    margin-bottom: 15px;
-}
-
-.service-item ul {
-    list-style: disc;
-    padding-left: 40px;
-}
-
-.service-item li {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-/* About Page Specific Styles */
-.about-hero {
-    background-image: url('resized_5.jpg');
-}
-
-.about-intro-section,
-.about-mission-section,
-.about-ceo-section {
-    background-color: white;
-    padding: 40px 20px;
-}
-
-.about-intro-section h2,
-.about-mission-section h2,
-.about-ceo-section h2 {
-    text-align: left;
-    border-bottom: 2px solid #004d99;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-}
-
-.about-intro-section p {
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
-
-.about-mission-section {
-    background-color: #f0f5f9;
-}
-
-.about-mission-section h2 {
-    border-color: #333;
-}
-
-.about-mission-section p {
-    font-size: 1.1em;
-    line-height: 1.7;
-}
-
-.ceo-cards {
-    display: flex;
-    justify-content: space-around;
-    gap: 40px;
-    margin-top: 40px;
-    flex-wrap: wrap;
-}
-
-.ceo-card {
-    flex: 1;
-    min-width: 300px;
-    padding: 20px;
+/* about.html에서 border-top이 제거된 .value-section에 대한 스타일 */
+.value-section {
+    padding: 60px 20px; 
     background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
+    border-bottom: 1px solid #eee; 
 }
 
-.ceo-card h3 {
-    color: #333;
-    font-size: 1.4em;
-    margin-bottom: 10px;
+.full-width-container h2 {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
 }
 
-.ceo-card p {
-    line-height: 1.6;
-}
-
-.ceo-card img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border: 3px solid #004d99;
-}
-
-
-/* Contact Page Specific Styles */
-.contact-hero {
-    background-image: url('resized_6.jpg');
-}
-
-.contact-info-section {
-    background-color: white;
-}
-
-.contact-offices {
+.promise-list, .mission-list, .value-list, .services-list {
     display: flex;
-    justify-content: space-around;
-    gap: 40px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-}
-
-.office-block {
-    flex: 1;
-    min-width: 300px;
-    padding: 20px;
-    border: 1px solid #eee;
-    border-radius: 8px;
-}
-
-.office-block h2 {
-    text-align: left;
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-.office-block p {
-    margin: 10px 0;
-}
-
-.office-block strong {
-    font-weight: bold;
-}
-
-.contact-form-section {
-    background-color: #f0f5f9;
-    padding-bottom: 80px;
-}
-
-.contact-form-section h2 {
-    margin-bottom: 30px;
-}
-
-.contact-form {
-    max-width: 600px;
+    flex-direction: column; /* 세로 배치  */
+    max-width: 1200px; /* 컨테이너의 폭은 홈페이지 최대 폭으로  */
     margin: 0 auto;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+.promise-item, .mission-item, .value-item, .service-item {
+    background-color: #f9f9f9;
     padding: 30px;
-    background-color: white;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-
-.contact-form .button {
-    width: 100%;
-    padding: 12px;
-    font-size: 1.1em;
-}
-
-.map-container {
-    height: 300px;
-    margin-top: 20px;
-    border: 1px solid #ddd;
-}
-
-.map-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 8px;
-}
-
-/* CTA Section (Used on Services, About) */
-.contact-section {
-    background-color: #004d99;
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
-}
-
-.contact-section h2 {
-    color: white;
+.promise-item .icon, .mission-item .icon, .value-item .icon, .service-item .icon {
     font-size: 2em;
     margin-bottom: 15px;
 }
 
-.contact-section p {
-    font-size: 1.1em;
-    margin-bottom: 30px;
+.promise-item h3, .mission-item h3, .value-item h3, .service-item h3 {
+    color: #004d99;
+    margin-top: 0;
 }
 
-.contact-section .button {
-    background-color: white;
+/* 회사소개 - 경영진 섹션 */
+.management-section {
+    background-color: #f4f4f4;
+}
+
+.management-section .subtitle {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.ceo-profiles {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+}
+
+.ceo-card {
+    flex: 1;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+}
+
+.ceo-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #004d99;
+}
+
+.ceo-card h3 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.ceo-card .role {
     color: #004d99;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.why-us-section, .contact-prompt-section {
+    padding: 80px 20px;
+}
+
+/* ------------------------------------------- */
+/* 문의하기 페이지 새로운 레이아웃 (요청 사항 반영) */
+/* ------------------------------------------- */
+
+.contact-details-form-section {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+}
+
+/* 메인 2열 컨테이너 */
+.office-blocks-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.office-block {
+    flex: 1;
+    min-width: 45%; /* 최소 폭 설정 */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.office-info {
+    text-align: left;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.office-info h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #004d99;
+    text-align: left;
+}
+
+.office-info p {
+    text-align: left;
+    margin: 10px 0;
+}
+
+/* 문의 양식 스타일 */
+.contact-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    text-align: left; /* 폼 요소 왼쪽 정렬 */
+}
+
+.contact-form fieldset {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.contact-form legend {
+    font-size: 1.2em;
+    color: #004d99;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
     font-weight: bold;
 }
 
-.contact-section .button:hover {
-    background-color: #f0f0f0;
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea,
+.contact-form input[type="file"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.contact-form input[type="file"] {
+    border: none;
+    padding-left: 0;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+    width: 100%;
+    background-color: #004d99;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #003366;
+}
+
+/* 지도 프레임 스타일 */
+.map-frame {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex-grow: 1; /* 남은 공간을 채우도록 성장 */
+}
+
+.map-frame h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
 }
 
 /* 푸터 스타일 */
@@ -516,10 +449,7 @@ footer {
 }
 
 .footer-logo img {
-    /* ⚠️ 푸터 로고 크기 수정: 높이를 40px로 제한하고, 너비는 비율에 맞게 자동으로 설정 */
-    height: 40px;
-    width: auto; /* 비율 유지를 위해 width: auto로 설정 */
-    object-fit: contain;
+    height: 30px;
     filter: invert(100%);
 }
 
@@ -547,68 +477,37 @@ footer {
 /* 반응형 디자인 */
 @media (max-width: 900px) {
     .header-container {
-        flex-direction: column;
-        text-align: center;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-
+    
     nav {
-        margin: 15px 0;
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
     }
 
     nav ul {
         justify-content: center;
     }
-
-    nav ul li {
-        margin: 0 10px;
+    
+    .language-selector {
+        order: 2;
     }
 
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    .promise-list, .mission-list, .value-list, .services-list {
+        gap: 20px;
     }
-
-    .footer-logo,
-    .contact-info {
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .contact-info h3 {
-        text-align: center;
-    }
-
-    .promise-cards {
-        flex-direction: column;
-    }
-
-    .office-block {
-        min-width: 100%;
-    }
-
-    .contact-offices {
+    
+    /* 문의하기 페이지 모바일 레이아웃 */
+    .office-blocks-container {
         flex-direction: column;
         gap: 20px;
     }
-}
 
-@media (max-width: 600px) {
-    .hero-section h1 {
-        font-size: 2em;
-    }
-
-    .hero-section p {
-        font-size: 1em;
-    }
-
-    .language-selector {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .language-selector button {
-        margin: 5px;
+    .ceo-profiles {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
 }

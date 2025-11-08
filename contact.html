@@ -31,14 +31,18 @@
     </header>
 
     <main>
-        <section class="hero-section contact-hero">
-            <h1 data-translate-key="contact_hero_title">문의하기</h1>
-            <p data-translate-key="contact_hero_subtitle">NEO MARITIME SERVICE에 연락하세요</p>
+        <section class="hero-section contact-hero" id="contact-hero">
+            <div class="hero-content">
+                <h1 data-translate-key="contact_hero_title">문의하기</h1>
+                <p data-translate-key="contact_hero_subtitle">귀사의 해상 운영에 필요한 모든 사항에 대해 문의해 주세요. </p>
+            </div>
         </section>
 
-        <section class="contact-info-section container">
-            <div class="contact-offices">
+        <section class="contact-details-form-section">
+            <div class="office-blocks-container">
+                
                 <div class="office-block korea-office-block">
+                    
                     <div class="office-info">
                         <h2 data-translate-key="contact_korea_title">🇰🇷 한국 사무소</h2>
                         <p><strong>주소:</strong> 광주광역시 광산구 목련로 394번길 64</p>
@@ -46,53 +50,89 @@
                         <p><strong>Emergency:</strong> +82 10 4124 6955</p>
                         <p><strong>Email:</strong> korea@neomaritimeservice.com</p>
                     </div>
-                    <div class="map-container">
-                        <iframe loading="lazy"
-                            allowfullscreen=""
+
+                    <form class="contact-form" action="#" method="POST" enctype="multipart/form-data">
+                        <fieldset class="korea-form">
+                            <legend data-translate-key="contact_form_korea_inquiry">🇰🇷 한국 문의</legend>
+                            <label for="korea_name" data-translate-key="contact_label_name">이름 또는 선명</label>
+                            <input type="text" id="korea_name" name="korea_name" required>
+
+                            <label for="korea_email" data-translate-key="contact_label_email">이메일</label>
+                            <input type="email" id="korea_email" name="korea_email" required>
+
+                            <label for="korea_phone" data-translate-key="contact_label_phone">연락처</label>
+                            <input type="tel" id="korea_phone" name="korea_phone">
+
+                            <label for="korea_message" data-translate-key="contact_label_message">문의 내용</label>
+                            <textarea id="korea_message" name="korea_message" rows="5" required></textarea>
+
+                            <label for="korea_attachment" data-translate-key="contact_label_file">첨부파일</label>
+                            <input type="file" id="korea_attachment" name="korea_attachment">
+
+                            <button type="submit" data-translate-key="contact_btn_submit">보내기</button>
+                        </fieldset>
+                    </form>
+
+                    <div class="map-frame">
+                        <h2 data-translate-key="contact_map_korea_h2">한국 사무소 위치</h2>
+                        <iframe
+                            width="100%"
+                            height="300"
+                            style="border:0;"
+                            loading="lazy"
+                            allowfullscreen
                             referrerpolicy="no-referrer-when-downgrade"
-                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDSjZdWy_KHuM81wpxINhRHicirFJVotbg&q=Calle+63a+oeste+23,+Panama,+Provincia+de+Panama"> </iframe>
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDSjZdWy_KHuM81wpxINhRHicirFJVotbg&q=광주광역시+광산구+목련로+394번"> </iframe>
                     </div>
+
                 </div>
 
                 <div class="office-block panama-office-block">
+
                     <div class="office-info">
                         <h2 data-translate-key="contact_panama_title">🇵🇦 파나마 사무소</h2>
-                        <p><strong>주소:</strong> Calle 63a oeste 23, PH Altabrisa, Piso 1, Oficina 104, Panama City, Panama</p>
-                        <p><strong>Tel:</strong> +507 392-5666</p>
-                        <p><strong>Emergency:</strong> +507 6378 0588</p>
-                        <p><strong>Email:</strong> panama@neomaritimeservice.com</p> </div>
-                    <div class="map-container">
-                        <iframe loading="lazy"
-                            allowfullscreen=""
+                        <p><strong>주소:</strong> Calle 63a oeste 23, Panama, Provincia de Panama</p>
+                        <p><strong>Tel:</strong> +507 372 3929</p>
+                        <p><strong>Emergency:</strong> +507 6831 6708</p>
+                        <p><strong>Email:</strong> panama@neomaritimeservice.com</p>
+                    </div>
+
+                    <form class="contact-form" action="#" method="POST" enctype="multipart/form-data">
+                        <fieldset class="panama-form">
+                            <legend data-translate-key="contact_form_panama_inquiry">🇵🇦 파나마 문의</legend>
+                            <label for="panama_name" data-translate-key="contact_label_name">이름 또는 선명</label>
+                            <input type="text" id="panama_name" name="panama_name" required>
+
+                            <label for="panama_email" data-translate-key="contact_label_email">이메일</label>
+                            <input type="email" id="panama_email" name="panama_email" required>
+
+                            <label for="panama_phone" data-translate-key="contact_label_phone">연락처</label>
+                            <input type="tel" id="panama_phone" name="panama_phone">
+
+                            <label for="panama_message" data-translate-key="contact_label_message">문의 내용</label>
+                            <textarea id="panama_message" name="panama_message" rows="5" required></textarea>
+
+                            <label for="panama_attachment" data-translate-key="contact_label_file">첨부파일</label>
+                            <input type="file" id="panama_attachment" name="panama_attachment">
+
+                            <button type="submit" data-translate-key="contact_btn_submit">보내기</button>
+                        </fieldset>
+                    </form>
+
+                    <div class="map-frame">
+                        <h2 data-translate-key="contact_map_panama_h2">파나마 사무소 위치</h2>
+                        <iframe
+                            width="100%"
+                            height="300"
+                            style="border:0;"
+                            loading="lazy"
+                            allowfullscreen
                             referrerpolicy="no-referrer-when-downgrade"
                             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDSjZdWy_KHuM81wpxINhRHicirFJVotbg&q=Calle+63a+oeste+23,+Panama,+Provincia+de+Panama"> </iframe>
                     </div>
 
                 </div>
             </div>
-        </section>
-        
-        <section class="contact-form-section">
-            <h2 data-translate-key="contact_form_title">온라인 문의</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name" data-translate-key="contact_form_name">이름</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email" data-translate-key="contact_form_email">이메일</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject" data-translate-key="contact_form_subject">제목</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="message" data-translate-key="contact_form_message">메시지</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit" class="button primary" data-translate-key="contact_form_btn">메시지 보내기</button>
-            </form>
         </section>
     </main>
 
@@ -111,14 +151,16 @@
             </div>
             <div class="contact-info">
                 <h3 data-translate-key="footer_panama_h3">🇵🇦 파나마 사무소</h3>
-                <p>Calle 63a oeste 23, PH Altabrisa, Piso 1, Oficina 104, Panama City, Panama</p>
-                <p>Tel: +507 392-5666</p>
-                <p>Emergency: +507 6378 0588</p>
-                <p>Email: panama@neomaritimeservice.com</p> </div>
+                <p>Calle 63a oeste 23, Panama, Provincia de Panama</p>
+                <p>Tel: +507 372 3929</p>
+                <p>Emergency: +507 6831 6708</p>
+                <p>Email: panama@neomaritimeservice.com</p>
+            </div>
         </div>
-        <p class="copyright" data-translate-key="footer_copyright">© 2025 NEO MARITIME SERVICE. All rights reserved.</p>
+        <div class="copyright" data-translate-key="footer_copyright">
+            © 2025 NEO MARITIME SERVICE. All rights reserved.
+        </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
